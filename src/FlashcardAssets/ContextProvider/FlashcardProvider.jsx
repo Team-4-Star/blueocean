@@ -2,11 +2,15 @@ import { useState } from "react";
 import FlashcardContext from "./FlashcardContext.mjs";
 
 const FlashcardContextProvider = ({children}) => {
-    
+
+    const [flashcards, setFlashcards] = useState({});
+
+
+
     return (
-        <FlashcardContextProvider>
+        <FlashcardContext.Provider value={{}} >
             {children}
-        </FlashcardContextProvider>
+        </FlashcardContext.Provider>
     )
 }
 

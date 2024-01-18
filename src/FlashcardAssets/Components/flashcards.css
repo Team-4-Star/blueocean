@@ -1,0 +1,120 @@
+:root {
+    --discordblue: #7289da;
+    --discordLgray: #424549;
+    --discordMgray: #36393e;
+    --discordDgray: #282b30;
+    --discordblack: #1e2124;
+}
+
+.FlashcardCtn {
+    display: flex;
+    flex-direction: column;
+    height: 900px;
+    width: 1000px;
+    border: none;
+    background-color: #1e2124;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.Flashcard {
+    height: 500px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+    margin: 3em;
+}
+
+.Flashcard > div {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.Flashcard > div > button {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #7289da;
+    text-shadow: 1px 0px 1px black;
+}
+
+.FlashcardBtnDiv {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    margin-top: 10px;
+    height: 70px;
+    align-items: center;
+}
+
+.Arrow {
+    color: var(--discordblue);
+    font-size: 60px;
+    cursor: pointer;
+    transition: color .5s ease;
+}
+.Arrow:hover {
+    color: white;
+}
+
+.AnswerBtn {
+    background-color: var(--discordMgray);
+    border: none;
+    height: 40px;
+    width: 110px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    font-size: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: color, background-color .5s ease;
+}
+.AnswerBtn:hover {
+    background-color: green;
+}
+
+.Pin {
+    font-size: 40px;
+    color: var(--discordMgray);
+    cursor: pointer;
+    transition: color .5s ease;
+}
+.Pin:hover {
+    color: red;
+}
+
+.SearchBar {
+    background-color: #424549;
+    height: 40px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 3px;
+}
+
+.SearchBar > input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    width: 250px;
+    font-size: 20px;
+}
+.SearchBar > input::placeholder {
+    color: gray;
+    text-indent: .5em;
+}
+
+.BsSearch {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: .5em;
+}
