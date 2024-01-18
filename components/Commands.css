@@ -6,11 +6,11 @@
     justify-content: top;
     border: thin solid black;
     border-radius: 30px;
-    background-color: var(--mid-grey);
+    background-color: var(--dark-grey);
     padding: 2rem;
     width: 30%;
     min-width: fit-content;
-    height: 50%;
+    height: auto;
     min-height: fit-content;
     font-family: 'Arial', 'Times New Roman';
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
@@ -32,13 +32,14 @@
     min-width: fit-content;
     width: 100%;
     border-radius: 20px;
-    border: thin solid black;
+    border: 3px solid var(--darkest-grey);
     font-size: 0.95rem;
     margin: 5px;
     text-align: center;
     background-color:var(--lightest-grey);
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 .command-list-text{
     display: flex;
@@ -70,4 +71,13 @@
 
 .copyButton:hover{
     cursor: pointer;
+    transform: scale(1.25)
+}
+
+.visible {
+    visibility: visible;
+}
+
+.hidden {
+    visibility: hidden;
 }

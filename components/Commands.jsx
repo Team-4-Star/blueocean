@@ -46,7 +46,7 @@ const Commands = () => {
                     </ul>
                     <div className="command-list-copy">
                      <LuCopy className="copyButton"  onClick={() => copyCommand(command.command, command.id)} />
-                     {copiedCommandId === command.id && <span className={`copied-message ${copiedCommandId === command.id}`}>Copied!</span>}
+                     <span className={`copied-message ${copiedCommandId === command.id ? 'visible' : 'hidden'}`}>Copied!</span>
                     </div>
                 </div>
                 )}
