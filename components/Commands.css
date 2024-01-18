@@ -31,14 +31,11 @@
 }
 
 .copied-message {
-    visibility: hidden;
     color: #33F12C;
     font-size: 1rem;
     transition: all 1s;
-}
- 
- .copied-message.visible {
-    visibility: visible;
+    padding: 5px;
+    position: absolute;
 }
 
 #copyButton {

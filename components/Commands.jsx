@@ -29,19 +29,20 @@ const Commands = () => {
         navigator.clipboard.writeText(command);
         setCopiedCommandId(id);
         setTimeout(() => setCopiedCommandId(null), 1000);
+        console.log("Copied!")
     }
 
     return (
         <div className="commands-container">
             <h1>Common Commands <FaCopy /></h1>
             <ul className="commands-list">
-                {commands.map((commands) => 
-                    <ul key={commands.id} className="command-list-item">
+                {commands.map((command) => 
+                    <ul key={command.id} className="command-list-item">
                         <h2>
-                            {commands.command} <LuCopy id="copyButton" onClick={() => copyCommand(commands.command, commands.id)} />
-                            {copiedCommandId === commands.id && <span className={`copied-message ${copiedCommandId === commands.id ? 'visible' : ''}`}>Copied!</span>}
+                            {command.command} <LuCopy className="copyButton" onClick={() => copyCommand(command.command, command.id)} />
+                            {copiedCommandId === command.id && <span className={`copied-message ${copiedCommandId === command.id}`}>Copied!</span>}
                         </h2>
-                        <p>{commands.description}</p>
+                        <p>{command.description}</p>
                     </ul>
                 )}
             </ul>
