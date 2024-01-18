@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { FaCopy } from "react-icons/fa";
+import { LuCopy } from "react-icons/lu";
 import './Commands.css'
 
 const Commands = () => {
     const [commands, setCommands] = useState([]);
+    const [copiedCommandId, setCopiedCommandId] = useState(null);
 
     const fetchCommands = async () => {
         try {
@@ -22,19 +25,27 @@ const Commands = () => {
         fetchCommands();
     }, [])
 
+    const copyCommand = (command, id) => {
+        navigator.clipboard.writeText(command);
+        setCopiedCommandId(id);
+        setTimeout(() => setCopiedCommandId(null), 1000);
+    }
+
     return (
         <div className="commands-container">
-            <h1>Commands</h1>
-            <ul>
+            <h1>Commonly Used Commands <FaCopy /></h1>
+            <ul className="commands-list">
                 {commands.map((commands) => 
-                    <li key={commands.id}>
-                        <h2>{commands.command}</h2>
+                    <ul key={commands.id} className="command-list-item">
+                        <h2>
+                            {commands.command} <LuCopy onClick={() => copyCommand(commands.command, commands.id)} />
+                            {copiedCommandId === commands.id && <span className="copied-message">   Copied!</span>}
+                            </h2>
                         <p>{commands.description}</p>
-                    </li>
+                    </ul>
                 )}
             </ul>
         </div>
-        
     )
 }
 
