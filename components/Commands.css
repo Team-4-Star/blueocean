@@ -2,30 +2,45 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: top;
     border: thin solid black;
     border-radius: 30px;
     background-color: var(--mid-grey);
     padding: 2rem;
-    width: 50%;
-    font-family: 'Arial', 'Times New Roman'
+    width: 25%;
+    height: 50%;
+    font-family: 'Arial', 'Times New Roman';
 }
 
 .commands-list{
-    gap: 2 rem;
-    background-color: var(--dark-grey);
     width: 100%;
+    margin: 10px;
 }
 
 .command-list-item{    
-    height: 100%;
+    padding: 12px;
+    height: fit-content;
     width: 100%;
+    border-radius: 20px;
+    border: thin solid black;
+    font-size: 0.95rem;
+    margin: 5px;
+    text-align: center;
     fit-content;
-    er: 2p solid black;
     background-color:var(--lightest-grey);
 }
 
-.copied-message{
-   color: #33F12C;
-   transition: all 1s;
+.copied-message {
+    visibility: hidden;
+    color: #33F12C;
+    font-size: 1rem;
+    transition: all 1s;
+}
+ 
+ .copied-message.visible {
+    visibility: visible;
+}
+
+#copyButton {
+    margin: 5px;
 }

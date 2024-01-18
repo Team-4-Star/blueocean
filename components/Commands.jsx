@@ -33,14 +33,14 @@ const Commands = () => {
 
     return (
         <div className="commands-container">
-            <h1>Commonly Used Commands <FaCopy /></h1>
+            <h1>Common Commands <FaCopy /></h1>
             <ul className="commands-list">
                 {commands.map((commands) => 
                     <ul key={commands.id} className="command-list-item">
                         <h2>
-                            {commands.command} <LuCopy onClick={() => copyCommand(commands.command, commands.id)} />
-                            {copiedCommandId === commands.id && <span className="copied-message">   Copied!</span>}
-                            </h2>
+                            {commands.command} <LuCopy id="copyButton" onClick={() => copyCommand(commands.command, commands.id)} />
+                            {copiedCommandId === commands.id && <span className={`copied-message ${copiedCommandId === commands.id ? 'visible' : ''}`}>Copied!</span>}
+                        </h2>
                         <p>{commands.description}</p>
                     </ul>
                 )}
