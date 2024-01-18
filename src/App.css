@@ -1,0 +1,26 @@
+:root{
+    --highlight: #7289da;
+    --lightest-grey: #424549;
+    --mid-grey: #36393e;
+    --dark-grey: #282b30;
+    --darkest-grey: #1e2124;
+    color: white;
+}
+
+* {
+    padding: 0; 
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main-page{
+    margin: 0rem;
+    display: flex; 
+    flex-direction: row;
+    height: 100dvh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--darkest-grey);
+}
+
