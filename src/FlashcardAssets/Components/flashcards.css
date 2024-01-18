@@ -8,25 +8,31 @@
 
 .FlashcardCtn {
     display: flex;
-    flex-direction: column;
-    height: 900px;
-    width: 1000px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 940px;
+    width: auto;
     border: none;
-    background-color: #1e2124;
+    background-color: rgba(30, 33, 36, .96);
     color: white;
     align-items: center;
     justify-content: center;
+    gap: 2em;
 }
 
 .Flashcard {
-    height: 500px;
-    width: auto;
+    height: 360px;
+    width: 430px;
+    background-color: #1e2124;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 25px;
-    margin: 3em;
+    font-size: 20px;
+    border: 2px solid var(--discordblue);
+    border-radius: 15px;
+    justify-content: space-around;
+    box-shadow: 1px 1px 10px black;
 }
 
 .Flashcard > div {
@@ -38,18 +44,19 @@
 .Flashcard > div > button {
     width: 100px;
     height: 40px;
-    font-size: 20px;
+    font-size: 22px;
     border: none;
     border-radius: 10px;
     color: white;
     background-color: #7289da;
     text-shadow: 1px 0px 1px black;
+    font-weight: bold;
 }
 
 .FlashcardBtnDiv {
     display: flex;
-    justify-content: space-evenly;
-    width: 30%;
+    justify-content: space-around;
+    width: 100%;
     margin-top: 10px;
     height: 70px;
     align-items: center;
@@ -57,7 +64,7 @@
 
 .Arrow {
     color: var(--discordblue);
-    font-size: 60px;
+    font-size: 20px;
     cursor: pointer;
     transition: color .5s ease;
 }
@@ -68,11 +75,10 @@
 .AnswerBtn {
     background-color: var(--discordMgray);
     border: none;
-    height: 40px;
+    height: 20px;
     width: 110px;
     color: white;
     text-shadow: 1px 1px 1px black;
-    font-size: 20px;
     border-radius: 3px;
     cursor: pointer;
     transition: color, background-color .5s ease;
@@ -117,4 +123,11 @@
     font-size: 20px;
     margin-top: 10px;
     margin-right: .5em;
+}
+
+.CurrentCard {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
