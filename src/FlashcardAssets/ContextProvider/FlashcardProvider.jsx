@@ -5,7 +5,7 @@ const FlashcardContextProvider = ({children}) => {
 
     
 //STATE
-    const [currentCard, setCurrentCard] = useState(1);
+
     const [flashcards, setFlashcards] = useState([]);
     const [flashcardsFetched, setFlashcardsFetched] = useState(false)
     const [showAnswer, setShowAnswer] = useState(false);
@@ -28,18 +28,10 @@ const FlashcardContextProvider = ({children}) => {
         }
     }
 
-    const nextCardClick = () => {
-        setCurrentCard(currentCard + 1)
-        console.log(currentCard + 1)
-    }
-
-    const prevCardClick = () => {
-        if(currentCard === 1) {
-            console.log('cannot go lower than 1')
-            return;
-        }
-        setCurrentCard(currentCard - 1)
-        console.log(currentCard - 1)
+    const toggleShowAnswer = (flashcardId) => {
+        setFlashcards(flashcards.map(card => 
+            card.id === flashcardId ? {...card, showAnswer: !card.showAnswer} : card
+        ));
     }
 
     useEffect(() => {
@@ -48,13 +40,9 @@ const FlashcardContextProvider = ({children}) => {
 
     return (
         <FlashcardContext.Provider value={{
-            nextCardClick,
-            getFlashcards,
-            setFlashcardsFetched,
-            prevCardClick,
-            currentCard,
-            flashcards
-        }} >
+            toggleShowAnswer,
+            showAnswer,
+            flashcards }} >
             {children}
         </FlashcardContext.Provider>
     )

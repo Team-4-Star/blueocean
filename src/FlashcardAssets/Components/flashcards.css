@@ -6,54 +6,54 @@
     --discordblack: #1e2124;
 }
 
-.FlashcardCtn {
+.flashcard-ctn {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: 940px;
     width: auto;
     border: none;
-    background-color: rgba(30, 33, 36, .96);
+    background-color: rgba(30, 33, 36, .7);
     color: white;
     align-items: center;
     justify-content: center;
-    gap: 2em;
+    gap: 1em;
+    padding: 0em 0em 17em 0em;
+    overflow: auto;
 }
 
-.Flashcard {
-    height: 360px;
-    width: 430px;
-    background-color: #1e2124;
+.flashcard {
+    min-height: 200px;
+    max-height: min-content;
+    min-width: 300px;
+    max-width: 450px;
+    background-color: var(--discordDgray);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 20px;
     border: 2px solid var(--discordblue);
     border-radius: 15px;
     justify-content: space-around;
     box-shadow: 1px 1px 10px black;
 }
 
-.Flashcard > div {
+.definition {
+    font-size: 27px;
+    margin: 1.5em;
+    text-shadow: 1px 1px 3px var(--discordblue);
+}
+.word {
+    font-size: 25px;
+    text-shadow: 1px 1px 3px var(--discordblue);
+}
+.flashcard > div {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
 }
 
-.Flashcard > div > button {
-    width: 100px;
-    height: 40px;
-    font-size: 22px;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    background-color: #7289da;
-    text-shadow: 1px 0px 1px black;
-    font-weight: bold;
-}
-
-.FlashcardBtnDiv {
+.flashcard-btn-div {
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -62,39 +62,62 @@
     align-items: center;
 }
 
-.Arrow {
+.arrow {
     color: var(--discordblue);
     font-size: 20px;
     cursor: pointer;
     transition: color .5s ease;
 }
-.Arrow:hover {
+.arrow:hover {
     color: white;
 }
 
-.AnswerBtn {
+.answer-btn {
     background-color: var(--discordMgray);
     border: none;
-    height: 20px;
+    height: 40px;
     width: 110px;
     color: white;
     text-shadow: 1px 1px 1px black;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     transition: color, background-color .5s ease;
+    font-size: 25px;
 }
-.AnswerBtn:hover {
-    background-color: green;
+.answer-btn:hover {
+    background-color: rgb(60, 138, 60);
+}
+.answer-btn:active {
+    background-color: rgb(60, 138, 60);
 }
 
-.Pin {
-    font-size: 40px;
+.pin {
+    font-size: 50px;
     color: var(--discordMgray);
     cursor: pointer;
     transition: color .5s ease;
 }
-.Pin:hover {
-    color: red;
+.pin:hover {
+    color: crimson;
+}
+.pin:active {
+    color: crimson;
+}
+
+.check-square {
+    font-size: 40px;
+    color: #424549;
+    transition: color, background-color .5s ease;
+    cursor: pointer;
+    border-radius: 7px;
+}
+.check-square:hover {
+    color: white;
+    background-color: green;
+}
+.check-square:active {
+    color: white;
+    background-color: green;
 }
 
 .SearchBar {
@@ -123,11 +146,4 @@
     font-size: 20px;
     margin-top: 10px;
     margin-right: .5em;
-}
-
-.CurrentCard {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
