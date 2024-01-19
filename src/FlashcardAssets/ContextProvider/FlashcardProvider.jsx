@@ -42,8 +42,7 @@ const FlashcardContextProvider = ({children}) => {
         <FlashcardContext.Provider value={{
             toggleShowAnswer,
             showAnswer,
-            flashcards
-        }} >
+            flashcards }} >
             {children}
         </FlashcardContext.Provider>
     )
