@@ -88,7 +88,7 @@
 }
 
 .Pin {
-    font-size: 40px;
+    font-size: 50px;
     color: var(--discordMgray);
     cursor: pointer;
     transition: color .5s ease;

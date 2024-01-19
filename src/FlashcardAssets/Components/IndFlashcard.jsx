@@ -5,21 +5,15 @@ import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
 const IndFlashcard = ({flashcard}) => {
 
   const {
-    nextCardClick,
-    getFlashcards,
-    prevCardClick,
-    showAnswer,
-    currentCard,
-    flashcards
+    toggleShowAnswer,
   } = useContext(FlashcardContext)
     
   return (
     <div className="Flashcard" >
-        {showAnswer ? <h1>{flashcard.word}</h1> : <p>{flashcard.definition}</p>}
+        {!flashcard.showAnswer ? <h1>{flashcard.word}</h1> : <p>{flashcard.definition}</p>}
             <div className="FlashcardBtnDiv" >
-                <span className="CurrentCard" >{flashcard.id}</span>
                 <TiPin className="Pin" />               
-                <button className="AnswerBtn" >Answer</button>
+                <button className="AnswerBtn" onClick={() => toggleShowAnswer(flashcard.id)} >{!flashcard.showAnswer ? 'Answer' : 'Back'}</button>
             </div>
       
     </div>

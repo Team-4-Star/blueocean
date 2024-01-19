@@ -8,7 +8,7 @@ function App() {
 
   return (
     <div className="main-page">
-    <Commands />
+    {/* <Commands /> */}
     <FlashcardCtn/>
     </div>
   )
