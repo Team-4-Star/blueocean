@@ -9,10 +9,13 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar-container">
-        <Link to="/flashcards" className="navbar-btn" onClick={() => handleButtonClick()}>
+        <Link to="/flashcards" className="navbar-btn navbar-link" onClick={() => handleButtonClick()}>
           Flashcards
         </Link>
-        <Link to="/commands" className="navbar-btn" onClick={() => handleButtonClick()}>
+        <Link to="/" className="navbar-btn navbar-link" onClick={() => handleButtonClick}>
+          Home
+        </Link>
+        <Link to="/commands" className="navbar-btn navbar-link" onClick={() => handleButtonClick()}>
           Commands
         </Link>
       </div>
