@@ -1,8 +1,8 @@
 
 import { useState } from 'react'
 import './App.css'
-import FlashcardCtn from './FlashcardAssets/Components/FlashcardCtn'
-import Commands from '../components/Commands.jsx'
+import FlashcardCtn from '../components/Flashcards/Components/FlashcardCtn.jsx'
+import Commands from '../components/Commands/Commands.jsx'
 
 function App() {
 
