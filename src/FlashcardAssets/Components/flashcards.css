@@ -5,7 +5,7 @@
     --discordDgray: #282b30;
     --discordblack: #1e2124;
 }
-
+/*BEGINNING of CSS for flashcard-ctn and flashcard and all elements */
 .flashcard-ctn {
     display: flex;
     flex-direction: row;
@@ -147,3 +147,5 @@
     margin-top: 10px;
     margin-right: .5em;
 }
+/*END of CSS for flashcard-ctn and flashcard and all elements */
+

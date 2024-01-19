@@ -3,13 +3,19 @@ import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
 import './flashcards.css';
 import { BsSearch } from "react-icons/bs";
 import IndFlashcard from "./IndFlashcard";
+import Categories from "./Categories";
 
 const FlashcardCtn = () => {
 
-    const {flashcards} = useContext(FlashcardContext)
-    console.log(flashcards)
+    const {flashcards, categories} = useContext(FlashcardContext)
+
     return (
         <div className="flashcard-ctn" >
+            
+            {categories.map((category) => (
+            <Categories key={category.id} category={category}/>
+            ))}
+
             {flashcards.map((flashcard) => (
                 <IndFlashcard key={flashcard.id} flashcard={flashcard} />
             ))}
