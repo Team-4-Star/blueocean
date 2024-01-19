@@ -9,11 +9,11 @@ const IndFlashcard = ({flashcard}) => {
   } = useContext(FlashcardContext)
     
   return (
-    <div className="Flashcard" >
-        {!flashcard.showAnswer ? <h1 className="Word" >{flashcard.word}</h1> : <p className="Definition" >{flashcard.definition}</p>}
-            <div className="FlashcardBtnDiv" >
-                <TiPin className="Pin" />               
-                <button className="AnswerBtn" onClick={() => toggleShowAnswer(flashcard.id)} >{!flashcard.showAnswer ? 'Answer' : 'Back'}</button>
+    <div className="flashcard" >
+        {!flashcard.showAnswer ? <h1 className="word" >{flashcard.word}</h1> : <p className="definition" >{flashcard.definition}</p>}
+            <div className="flashcard-btn-div" >
+                <TiPin className="pin" />               
+                <button className="answer-btn" onClick={() => toggleShowAnswer(flashcard.id)} >{!flashcard.showAnswer ? 'Answer' : 'Back'}</button>
             </div>
       
     </div>

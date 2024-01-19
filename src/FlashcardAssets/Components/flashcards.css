@@ -6,14 +6,14 @@
     --discordblack: #1e2124;
 }
 
-.FlashcardCtn {
+.flashcard-ctn {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     height: 940px;
     width: auto;
     border: none;
-    background-color: rgba(30, 33, 36, .96);
+    background-color: rgba(30, 33, 36, .7);
     color: white;
     align-items: center;
     justify-content: center;
@@ -21,10 +21,10 @@
     overflow: auto;
 }
 
-.Flashcard {
+.flashcard {
     height: 600px;
     width: 500px;
-    background-color: #1e2124;
+    background-color: var(--discordDgray);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -36,34 +36,22 @@
     box-shadow: 1px 1px 10px black;
 }
 
-.Definition {
+.definition {
     font-size: 27px;
     margin: 1.5em;
     text-shadow: 1px 1px 3px var(--discordblue);
 }
-.Word {
+.word {
     font-size: 60px;
     text-shadow: 1px 1px 3px var(--discordblue);
 }
-.Flashcard > div {
+.flashcard > div {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
 }
 
-.Flashcard > div > button {
-    width: 100px;
-    height: 40px;
-    font-size: 22px;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    background-color: #7289da;
-    text-shadow: 1px 0px 1px black;
-    font-weight: bold;
-}
-
-.FlashcardBtnDiv {
+.flashcard-btn-div {
     display: flex;
     justify-content: space-around;
     width: 100%;
@@ -72,38 +60,45 @@
     align-items: center;
 }
 
-.Arrow {
+.arrow {
     color: var(--discordblue);
     font-size: 20px;
     cursor: pointer;
     transition: color .5s ease;
 }
-.Arrow:hover {
+.arrow:hover {
     color: white;
 }
 
-.AnswerBtn {
+.answer-btn {
     background-color: var(--discordMgray);
     border: none;
-    height: 20px;
+    height: 40px;
     width: 110px;
     color: white;
     text-shadow: 1px 1px 1px black;
     border-radius: 3px;
     cursor: pointer;
     transition: color, background-color .5s ease;
+    font-size: 25px;
 }
-.AnswerBtn:hover {
-    background-color: green;
+.answer-btn:hover {
+    background-color: rgb(60, 138, 60);
+}
+.answer-btn:active {
+    background-color: rgb(60, 138, 60);
 }
 
-.Pin {
+.pin {
     font-size: 50px;
     color: var(--discordMgray);
     cursor: pointer;
     transition: color .5s ease;
 }
-.Pin:hover {
+.pin:hover {
+    color: crimson;
+}
+.pin:active {
     color: crimson;
 }
 

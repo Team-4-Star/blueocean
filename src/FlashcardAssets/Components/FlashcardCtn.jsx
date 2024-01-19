@@ -9,7 +9,7 @@ const FlashcardCtn = () => {
     const {flashcards} = useContext(FlashcardContext)
 
     return (
-        <div className="FlashcardCtn" >
+        <div className="flashcard-ctn" >
             {flashcards.map((flashcard) => (
                 <IndFlashcard key={flashcard.id} flashcard={flashcard} />
             ))}
