@@ -1,16 +1,27 @@
 
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
-import FlashcardCtn from '../components/Flashcards/Components/FlashcardCtn.jsx'
-import Commands from '../components/Commands/Commands.jsx'
+import FlashcardCtn from './FlashcardAssets/Components/FlashcardCtn.jsx'
+import Commands from '../components/Commands.jsx'
+import Navbar from '../components/Navbar'
+import Home from '../components/Home.jsx'
 
 function App() {
 
   return (
+    <Router>
     <div className="main-page">
-    <Commands />
-    <FlashcardCtn/>
+      <Navbar />
+      <div className="page-content">
+        <Routes>
+          <Route path = "/" element={<Home />} />
+          <Route path = "/commands" element={<Commands />} />
+          <Route path = "/flashcards" element={<FlashcardCtn />} />
+        </Routes>
+      </div>
     </div>
+    </Router>
   )
 }
 

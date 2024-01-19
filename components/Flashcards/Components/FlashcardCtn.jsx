@@ -7,9 +7,9 @@ import IndFlashcard from "./IndFlashcard";
 const FlashcardCtn = () => {
 
     const {flashcards} = useContext(FlashcardContext)
-
+    console.log(flashcards)
     return (
-        <div className="FlashcardCtn" >
+        <div className="flashcard-ctn" >
             {flashcards.map((flashcard) => (
                 <IndFlashcard key={flashcard.id} flashcard={flashcard} />
             ))}
