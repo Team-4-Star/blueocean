@@ -17,19 +17,21 @@
     color: white;
     align-items: center;
     justify-content: center;
-    gap: 2em;
+    gap: 1em;
+    padding: 0em 0em 17em 0em;
     overflow: auto;
 }
 
 .flashcard {
-    height: 600px;
-    width: 500px;
+    min-height: 200px;
+    max-height: min-content;
+    min-width: 300px;
+    max-width: 450px;
     background-color: var(--discordDgray);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-size: 20px;
     border: 2px solid var(--discordblue);
     border-radius: 15px;
     justify-content: space-around;
@@ -42,7 +44,7 @@
     text-shadow: 1px 1px 3px var(--discordblue);
 }
 .word {
-    font-size: 60px;
+    font-size: 25px;
     text-shadow: 1px 1px 3px var(--discordblue);
 }
 .flashcard > div {
@@ -100,6 +102,22 @@
 }
 .pin:active {
     color: crimson;
+}
+
+.check-square {
+    font-size: 40px;
+    color: #424549;
+    transition: color, background-color .5s ease;
+    cursor: pointer;
+    border-radius: 7px;
+}
+.check-square:hover {
+    color: white;
+    background-color: green;
+}
+.check-square:active {
+    color: white;
+    background-color: green;
 }
 
 .SearchBar {

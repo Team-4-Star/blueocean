@@ -1,7 +1,7 @@
 
 import { useState } from 'react'
 import './App.css'
-import FlashcardCtn from './FlashcardAssets/Components/FlashcardCtn'
+import FlashcardCtn from './FlashcardAssets/Components/FlashcardCtn.jsx'
 import Commands from '../components/Commands.jsx'
 
 function App() {
