@@ -16,11 +16,14 @@
 .main-page{
     margin: 0rem;
     display: flex; 
-    flex-direction: row;
+    flex-direction: column;
     height: 100dvh;
     width: 100%;
     align-items: center;
-    justify-content: center;
     background-color: var(--darkest-grey);
 }
 
+.page-content{
+    display: flex;
+    flex-direction: row;
+}
