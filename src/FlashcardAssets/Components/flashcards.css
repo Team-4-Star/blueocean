@@ -18,11 +18,12 @@
     align-items: center;
     justify-content: center;
     gap: 2em;
+    overflow: auto;
 }
 
 .Flashcard {
-    height: 360px;
-    width: 430px;
+    height: 600px;
+    width: 500px;
     background-color: #1e2124;
     display: flex;
     flex-direction: column;
@@ -35,6 +36,15 @@
     box-shadow: 1px 1px 10px black;
 }
 
+.Definition {
+    font-size: 27px;
+    margin: 1.5em;
+    text-shadow: 1px 1px 3px var(--discordblue);
+}
+.Word {
+    font-size: 60px;
+    text-shadow: 1px 1px 3px var(--discordblue);
+}
 .Flashcard > div {
     display: flex;
     width: 100%;
@@ -94,7 +104,7 @@
     transition: color .5s ease;
 }
 .Pin:hover {
-    color: red;
+    color: crimson;
 }
 
 .SearchBar {
@@ -123,11 +133,4 @@
     font-size: 20px;
     margin-top: 10px;
     margin-right: .5em;
-}
-
-.CurrentCard {
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

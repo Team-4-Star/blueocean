@@ -10,7 +10,7 @@ const IndFlashcard = ({flashcard}) => {
     
   return (
     <div className="Flashcard" >
-        {!flashcard.showAnswer ? <h1>{flashcard.word}</h1> : <p>{flashcard.definition}</p>}
+        {!flashcard.showAnswer ? <h1 className="Word" >{flashcard.word}</h1> : <p className="Definition" >{flashcard.definition}</p>}
             <div className="FlashcardBtnDiv" >
                 <TiPin className="Pin" />               
                 <button className="AnswerBtn" onClick={() => toggleShowAnswer(flashcard.id)} >{!flashcard.showAnswer ? 'Answer' : 'Back'}</button>
