@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
-import FlashcardCtn from './FlashcardAssets/Components/FlashcardCtn.jsx'
 import Categories from './CategoriesAssets/Components/Categories.jsx';
 import Commands from '../components/Commands.jsx'
 import Navbar from '../components/Navbar'
