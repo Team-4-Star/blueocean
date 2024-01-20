@@ -1,11 +1,8 @@
 import './categories.css'
 import { FaReact } from "react-icons/fa";
-import { FaPlay } from "react-icons/fa";
 import { FaNode } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import ReactCardCtn from './ReactCardCtn';
 
 const CategoriesCtn = () => {
 
@@ -15,20 +12,20 @@ const CategoriesCtn = () => {
       <div className='category' >
         <h1>ALL</h1>
         <Link to='/flashcards'>
-          <IoLogoJavascript className='js-icon logos' />
+          <IoLogoJavascript className='js-logo logos' />
         </Link>
       </div>
 
       <div className='category' >
         <h1>REACT</h1>
         <Link to='/react-flashcards'>
-          <FaReact className="react-icon logos" />
+          <FaReact className="react-logo logos" />
         </Link>
       </div>
 
       <div className='category' >
         <h1>NODE</h1>
-        <FaNode className='node-icon logos' />
+        <FaNode className='node-logo logos' />
       </div>
 
     </div>

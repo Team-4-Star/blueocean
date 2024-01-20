@@ -34,22 +34,22 @@
     text-shadow: 3px 1px 3px var(--discordblue);
 }
 
-.react-icon {
+.react-logo {
     font-size: 200px;
     color: aqua;
 }
 
-.node-icon {
+.node-logo {
     font-size: 200px;
 }
 
-.js-icon {
+.js-logo {
     font-size: 200px;
     color: gold;
 }
 
 .logos{
-    transition: font-size .5s ease;
+    transition: font-size .2s ease;
 }
 .logos:hover {
     font-size: 300px;
@@ -58,8 +58,34 @@
 
 /* BEGIN ReactCtn CSS */
 .react-card-ctn {
-    height: 100px;
-    width: 100px;
-    border: 1px solid white;
+    height: 740px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+.cards-nav {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.searchbar-links {
+    font-size: 60px;
+    transition: font-size .2s ease;
+}
+.searchbar-links:hover {
+    font-size: 150px;
+}
+
+.javascript-link {
+    color: gold;
+}
+
+.react-link {
+    color: aqua;
+
 /* END ReactCtn CSS */
