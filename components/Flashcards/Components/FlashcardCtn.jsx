@@ -3,11 +3,10 @@ import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
 import './flashcards.css';
 import { BsSearch } from "react-icons/bs";
 import IndFlashcard from "./IndFlashcard";
-import Categories from "./Categories";
 
 const FlashcardCtn = () => {
 
-    const {flashcards, categories} = useContext(FlashcardContext)
+    const {flashcards} = useContext(FlashcardContext)
 
     return (
         <div className="flashcard-ctn" >
@@ -20,8 +19,3 @@ const FlashcardCtn = () => {
 }
 
 export default FlashcardCtn;
-
-{/* <div className="SearchBar" >
-                <input placeholder="Search Flashcards"/>
-                <BsSearch className="BsSearch" />
-            </div> */}

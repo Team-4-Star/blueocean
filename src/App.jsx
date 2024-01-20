@@ -5,8 +5,9 @@ import './App.css'
 import Commands from '../components/Commands/Commands.jsx'
 import Navbar from '../components/Navbar'
 import Home from '../components/Home.jsx'
-// import FlashcardCtn from '../components/Flashcards/Components/FlashcardCtn.jsx';
+import FlashcardCtn from '../components/Flashcards/Components/FlashcardCtn.jsx';
 import CategoriesCtn from '../components/Flashcards/Components/CategoriesCtn.jsx';
+import ReactCardCtn from '../components/Flashcards/Components/ReactCardCtn.jsx';
 
 function App() {
 
@@ -18,7 +19,9 @@ function App() {
         <Routes>
           <Route path = "/" element={<Home />} />
           <Route path = "/commands" element={<Commands />} />
-          <Route path = "/flashcards" element={<CategoriesCtn />} />
+          <Route path = "/categories" element={<CategoriesCtn />} />
+          <Route path = "/flashcards" element={<FlashcardCtn />} />
+          <Route path = "/react-flashcards" element={<ReactCardCtn/>} />
         </Routes>
       </div>
     </div>
