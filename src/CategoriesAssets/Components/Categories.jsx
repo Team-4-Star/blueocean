@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
-import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
+import FlashcardContext from "../../FlashcardAssets/ContextProvider/FlashcardContext.mjs";
+import './categories.css'
 
 const Categories = () => {
     
@@ -10,7 +11,7 @@ const Categories = () => {
     }, []);
 
   return (
-    <div className="flashcard-categories" >
+    <div className="flashcard-categories-ctn" >
       
     </div>
   )

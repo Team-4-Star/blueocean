@@ -3,7 +3,7 @@ import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
 import './flashcards.css';
 import { BsSearch } from "react-icons/bs";
 import IndFlashcard from "./IndFlashcard";
-import Categories from "./Categories";
+import Categories from "../../CategoriesAssets/Components/Categories";
 
 const FlashcardCtn = () => {
 
