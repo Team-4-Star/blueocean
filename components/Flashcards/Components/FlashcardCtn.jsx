@@ -11,10 +11,6 @@ const FlashcardCtn = () => {
 
     return (
         <div className="flashcard-ctn" >
-            
-            {categories.map((category) => (
-            <Categories key={category.id} category={category}/>
-            ))}
 
             {flashcards.map((flashcard) => (
                 <IndFlashcard key={flashcard.id} flashcard={flashcard} />
