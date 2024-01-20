@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import FlashcardContextProvider from './FlashcardAssets/ContextProvider/FlashcardProvider.jsx'
+import FlashcardContextProvider from '../components/Flashcards/ContextProvider/FlashcardProvider.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <FlashcardContextProvider>
