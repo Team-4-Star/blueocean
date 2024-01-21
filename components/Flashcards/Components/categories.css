@@ -59,6 +59,7 @@
 /* END CategoriesCtn CSS */
 
 /* BEGIN ReactCtn CSS */
+.node-card-ctn,
 .react-card-ctn {
     height: 740px;
     width: 100%;

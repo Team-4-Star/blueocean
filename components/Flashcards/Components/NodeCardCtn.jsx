@@ -15,6 +15,8 @@ const NodeCardCtn = () => {
           <FaReact className="searchbar-links react-link" />
         </Link>    
       </div>
+
+      NODE FLASHCARDS WILL BE HERE
       
     </div>
   )

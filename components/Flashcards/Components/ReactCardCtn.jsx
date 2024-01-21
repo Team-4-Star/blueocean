@@ -15,6 +15,7 @@ const ReactCardCtn = () => {
           <FaNode className='searchbar-links node-link' />
         </Link>
       </div>
+      REACT FLASHCARDS WILL BE HERE
     </div>
   )
 }
