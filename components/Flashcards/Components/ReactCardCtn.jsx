@@ -11,7 +11,9 @@ const ReactCardCtn = () => {
             <IoLogoJavascript className='searchbar-links javascript-link' />
         </Link>
 
-        <FaNode className='searchbar-links node-link' />
+        <Link to='/node-flashcards'>
+          <FaNode className='searchbar-links node-link' />
+        </Link>
       </div>
     </div>
   )

@@ -25,7 +25,9 @@ const CategoriesCtn = () => {
 
       <div className='category' >
         <h1>NODE</h1>
-        <FaNode className='node-logo logos' />
+        <Link to='/node-flashcards'>
+          <FaNode className='node-logo logos' />
+        </Link>
       </div>
 
     </div>

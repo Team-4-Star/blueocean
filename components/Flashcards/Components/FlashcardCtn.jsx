@@ -19,7 +19,9 @@ const FlashcardCtn = () => {
                     <FaReact className="searchbar-links react-link" />
                 </Link>
 
-                <FaNode className='searchbar-links node-icon' />
+                <Link to='/node-flashcards'>
+                    <FaNode className='searchbar-links node-link' />
+                </Link>
             </div>
 
             <div className="card-ctn" >
