@@ -65,9 +65,8 @@ const FlashcardContextProvider = ({children}) => {
             showAnswer,
             flashcards,
             categories,
-          }}
-        >
-          {children}
+            showAnswer }} >
+            {children}
         </FlashcardContext.Provider>
       );
 }
