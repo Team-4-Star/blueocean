@@ -24,11 +24,12 @@ const FlashcardContextProvider = ({children}) => {
             setFlashcardsFetched(true)
             // console.log(flashcards)
             // console.log(flashcardsFetched)
+            console.log(flashcards)
+            console.log(flashcardsFetched)
         }   catch (error) {
             console.error('problem fetching cards')
         }
     }
-
     //function to fetch flashcard categories
     const getCategories = async () => {
         try {
@@ -63,6 +64,9 @@ const FlashcardContextProvider = ({children}) => {
             showAnswer,
             flashcards,
             categories }} >
+            toggleShowAnswer,
+            showAnswer,
+            flashcards }} >
             {children}
         </FlashcardContext.Provider>
     )
