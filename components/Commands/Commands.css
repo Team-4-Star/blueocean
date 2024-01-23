@@ -81,3 +81,12 @@
 .hidden {
     visibility: hidden;
 }
+
+#search-container{
+    width: 100%;
+}
+
+#command-search{
+    margin-top: 1rem;
+    width: 70%;
+}
