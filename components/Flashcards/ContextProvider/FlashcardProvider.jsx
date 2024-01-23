@@ -63,10 +63,8 @@ const FlashcardContextProvider = ({children}) => {
             toggleShowAnswer,
             showAnswer,
             flashcards,
-            categories }} >
-            toggleShowAnswer,
-            showAnswer,
-            flashcards }} >
+            categories,
+            showAnswer }} >
             {children}
         </FlashcardContext.Provider>
     )
