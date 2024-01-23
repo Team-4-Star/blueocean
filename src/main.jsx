@@ -5,9 +5,9 @@ import './index.css'
 import FlashcardContextProvider from '../components/Flashcards/ContextProvider/FlashcardProvider.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <FlashcardContextProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </FlashcardContextProvider>
+    <FlashcardContextProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </FlashcardContextProvider>
 );
