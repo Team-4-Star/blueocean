@@ -43,6 +43,21 @@
     gap: 5em;
     justify-content: center;
     align-items: center;
+  
+.flashcard-ctn {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 940px;
+    width: auto;
+    border: none;
+    background-color: rgba(30, 33, 36, .7);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 0em 0em 17em 0em;
+    overflow: auto;
 }
 
 .flashcard {
@@ -69,7 +84,9 @@
 .word {
     font-size: 25px;
     text-shadow: 3px 1px 3px var(--discordblue);
+    text-shadow: 1px 1px 3px var(--discordblue);
 }
+ 
 .flashcard > div {
     display: flex;
     width: 100%;
@@ -84,7 +101,16 @@
     height: 70px;
     align-items: center;
 }
-
+  
+.arrow {
+    color: var(--discordblue);
+    font-size: 20px;
+    cursor: pointer;
+    transition: color .5s ease;
+}
+.arrow:hover {
+    color: white;
+}
 .answer-btn {
     background-color: var(--discordMgray);
     border: none;
@@ -133,3 +159,31 @@
     background-color: green;
 }
 /*END of CSS for flashcard-ctn and flashcard and all elements */
+
+.SearchBar {
+    background-color: #424549;
+    height: 40px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 3px;
+}
+
+.SearchBar > input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-weight: bold;
+    width: 250px;
+    font-size: 20px;
+}
+.SearchBar > input::placeholder {
+    color: gray;
+    text-indent: .5em;
+}
+
+.BsSearch {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-right: .5em;
+}
