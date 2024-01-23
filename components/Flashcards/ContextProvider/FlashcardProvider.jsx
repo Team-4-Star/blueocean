@@ -87,7 +87,7 @@ const FlashcardContextProvider = ({children}) => {
             reactFlashcards,
             flashcards,
             categories,
-            showAnswer }}>
+            showAnswer }} >
             {children}
         </FlashcardContext.Provider>
       );
