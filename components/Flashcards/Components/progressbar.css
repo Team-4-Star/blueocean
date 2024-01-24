@@ -1,0 +1,13 @@
+:root{
+    --discordblue: #7289da;
+    --discordLgray: #424549;
+    --discordMgray: #36393e;
+    --discordDgray: #282b30;
+    --discordblack: #1e2124;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 20px;
+    background-color: white;
+}
