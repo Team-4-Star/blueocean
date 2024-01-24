@@ -39,4 +39,8 @@
     height: 10%;
     border-radius: 7px;
     margin-bottom: 2px;
+.progress-bar {
+    height: 100%;
+    width: 20px;
+    background-color: white;
 }
