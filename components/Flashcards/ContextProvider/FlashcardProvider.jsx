@@ -2,8 +2,6 @@ import { useState } from "react";
 import FlashcardContext from "./FlashcardContext.mjs";
 
 const FlashcardContextProvider = ({children}) => {
-
-    
 //STATE
 
     const [flashcards, setFlashcards] = useState([]);
@@ -14,6 +12,7 @@ const FlashcardContextProvider = ({children}) => {
     const [categories, setCategories] = useState([]);
 
 //FUNCTIONS
+
     //function to fetch all flashcards
     const getFlashcards = async () => {
         try {
@@ -25,7 +24,6 @@ const FlashcardContextProvider = ({children}) => {
             setFlashcards(data);
             setFlashcardsFetched(true)
             console.log(flashcards)
-            console.log(flashcardsFetched)
 
         }   catch (error) {
             console.error('problem fetching cards')
@@ -46,7 +44,6 @@ const FlashcardContextProvider = ({children}) => {
             setElem(cards);
             setFlashcardsFetched(true)
             console.log(elem)
-            console.log(flashcardsFetched)
 
         }   catch (error) {
             console.error('problem fetching cards')
@@ -73,6 +70,7 @@ const FlashcardContextProvider = ({children}) => {
         setElem(elem.map(card => 
             card.id === flashcardId ? {...card, showAnswer: !card.showAnswer} : card
         ));
+        console.log('working')
     }
 
     return (
