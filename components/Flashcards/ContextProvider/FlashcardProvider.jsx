@@ -10,6 +10,7 @@ const FlashcardContextProvider = ({children}) => {
     const [flashcardsFetched, setFlashcardsFetched] = useState(false)
     const [showAnswer, setShowAnswer] = useState(false);
     const [categories, setCategories] = useState([]);
+    const [progress, setProgress] = useState(0)
 
 //FUNCTIONS
 
