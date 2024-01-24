@@ -35,3 +35,12 @@
     text-decoration: none;
     color: inherit; 
 }
+
+.solidify{
+    scale: 0.7
+}
+
+.solidify-image{
+    height: 90px;
+    width: auto;
+}

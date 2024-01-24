@@ -16,7 +16,6 @@ function App() {
     <Router>
     <div className="main-page">
       <Navbar />
-      <div className="page-content">
         <Routes>
           <Route path = "/" element={<Home />} />
           <Route path = "/commands" element={<Commands />} />
@@ -26,7 +25,6 @@ function App() {
           <Route path = "/node-flashcards" element={<NodeCardCtn/>} />
         </Routes>
       </div>
-    </div>
     </Router>
   )
 }

@@ -58,18 +58,18 @@ const FlashcardContextProvider = ({children}) => {
     }, []);
 
     return (
-        <FlashcardContext.Provider value={{
+        <FlashcardContext.Provider
+          value={{
             getCategories,
             toggleShowAnswer,
             showAnswer,
             flashcards,
-            categories }} >
-            toggleShowAnswer,
-            showAnswer,
-            flashcards }} >
-            {children}
+            categories,
+          }}
+        >
+          {children}
         </FlashcardContext.Provider>
-    )
+      );
 }
 
 export default FlashcardContextProvider;
