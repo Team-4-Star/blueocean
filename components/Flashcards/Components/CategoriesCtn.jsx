@@ -9,8 +9,11 @@ const CategoriesCtn = () => {
 
   return (
     <div className="flashcard-categories-ctn" >
-      <ProgressBar/>
-
+      <div className='progress-ctn' >
+        <h1>Progress</h1>
+        <ProgressBar/>
+      </div>
+      
       <div className='category' >
         <h1>ALL</h1>
         <Link to='/flashcards'>
