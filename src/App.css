@@ -23,8 +23,3 @@
     align-items: center;
     background-color: var(--darkest-grey);
 }
-
-.page-content{
-    display: flex;
-    flex-direction: row;
-}
