@@ -1,20 +1,19 @@
 import { useContext, useState, useEffect } from "react";
 import { TiPin } from "react-icons/ti";
-import { FaRegCheckSquare } from "react-icons/fa";
 import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
+import { FaRegCheckSquare } from "react-icons/fa";
 
 const IndNodeCards = ({flashcard}) => {
 
-  const {
-    toggleShowAnswer,
-    nodeFlashcards,
-    setNodeFlashcards
-  } = useContext(FlashcardContext)
+    const {
+        toggleShowAnswer,
+        setNodeFlashcards,
+        nodeFlashcards
+    } = useContext(FlashcardContext)
     
   return (
     <div className="flashcard" >
         {!flashcard.showAnswer ? <h1 className="word" >{flashcard.word}</h1> : <p className="definition" >{flashcard.definition}</p>}
-
             <div className="flashcard-btn-div" >
                 <TiPin className="pin" />   
                 <FaRegCheckSquare className="check-square" />            

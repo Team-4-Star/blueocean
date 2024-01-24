@@ -25,6 +25,7 @@ const FlashcardContextProvider = ({children}) => {
             setFlashcards(data);
             setFlashcardsFetched(true)
             console.log(flashcards)
+            console.log(flashcardsFetched)
 
         }   catch (error) {
             console.error('problem fetching cards')
@@ -45,6 +46,7 @@ const FlashcardContextProvider = ({children}) => {
             setElem(cards);
             setFlashcardsFetched(true)
             console.log(elem)
+            console.log(flashcardsFetched)
 
         }   catch (error) {
             console.error('problem fetching cards')
@@ -87,7 +89,7 @@ const FlashcardContextProvider = ({children}) => {
             reactFlashcards,
             flashcards,
             categories,
-            showAnswer }} >
+            showAnswer }}>
             {children}
         </FlashcardContext.Provider>
       );

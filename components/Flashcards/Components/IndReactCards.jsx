@@ -14,7 +14,6 @@ const IndReactCards = ({flashcard}) => {
   return (
     <div className="flashcard" >
         {!flashcard.showAnswer ? <h1 className="word" >{flashcard.word}</h1> : <p className="definition" >{flashcard.definition}</p>}
-        
             <div className="flashcard-btn-div" >
                 <TiPin className="pin" />   
                 <FaRegCheckSquare className="check-square" />            
