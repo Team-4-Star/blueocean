@@ -3,7 +3,7 @@ import { FaReact } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
-import IndNodeCards from './IndReactCards';
+import IndNodeCards from './IndNodeCards';
 import { useEffect } from "react";
 
 const NodeCardCtn = () => {
