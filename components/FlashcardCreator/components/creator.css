@@ -1,0 +1,13 @@
+:root {
+    --discordblue: #7289da;
+    --discordLgray: #424549;
+    --discordMgray: #36393e;
+    --discordDgray: #282b30;
+    --discordblack: #1e2124;
+}
+
+.creator-ctn {
+    border: 1px solid white;
+    height: 740px;
+    width: 100%;
+}
