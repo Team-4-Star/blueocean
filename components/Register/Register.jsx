@@ -12,8 +12,12 @@ const Register = () => {
                     <input type="text" id="username" placeholder="username" autocomplete="off"/> 
                 </div>
                 <div className ="input-row">
-                    <label for="password" class="label">Password</label>
+                    <label for="password" class="label">Password:</label>
                     <input type="text" id="password" placeholder="password" autocomplete="off"/>
+                </div>
+                <div className ="input-row">
+                    <label for="role" class="label">Role:</label>
+                    <input type="text" id="role" placeholder="role" autocomplete="off"/>
                 </div>
                 <button id="submit-btn">Submit</button>
                 <div id="status" className="hidden">
