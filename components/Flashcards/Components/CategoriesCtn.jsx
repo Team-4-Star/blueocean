@@ -10,10 +10,10 @@ const CategoriesCtn = () => {
 
   return (
     <div className="flashcard-categories-ctn" >
-      {/* <div className='progress-ctn' >
+      <div className='progress-ctn' >
         <h1>Progress</h1>
         <ProgressBar/>
-      </div> */}
+      </div>
       
       <div className='category' >
         <h1>ALL</h1>
@@ -36,12 +36,12 @@ const CategoriesCtn = () => {
         </Link>
       </div>
 
-      {/* <div className='category' >
+      <div className='category' >
         <h1>CREATE</h1>
         <Link to='/create-flashcard'>
           <IoIosCreate className='create-logo logos'/>
         </Link>
-      </div> */}
+      </div>
 
     </div>
   )

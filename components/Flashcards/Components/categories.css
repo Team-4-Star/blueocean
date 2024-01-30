@@ -70,7 +70,7 @@
 }
 
 .cards-nav {
-    height: 150px;
+    height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -86,7 +86,7 @@
     transition: font-size .2s ease;
 }
 .searchbar-links:hover {
-    font-size: 120px;
+    font-size: 90px;
 }
 
 .javascript-link {
