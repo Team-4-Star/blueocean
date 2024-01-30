@@ -33,6 +33,7 @@
     color: white;
     align-items: center;
     overflow: auto;
+    margin-top: 30px;
 }
 
 .card-ctn {
