@@ -12,13 +12,13 @@ const Navbar = () => {
         <Link to="/categories" className="navbar-btn navbar-link" onClick={() => handleButtonClick()}>
           Flashcards
         </Link>
-
-        <Link to="/" className="solidify" onClick={() => handleButtonClick()}>
-          <img className="solidify-image" src={Solidify} alt="Solidify Image" />
-        </Link>
         <Link to="/commands" className="navbar-btn navbar-link" onClick={() => handleButtonClick()}>
           Commands
         </Link>
+        <Link to="/" className="solidify" onClick={() => handleButtonClick()}>
+          <img className="solidify-image" src={Solidify} alt="Solidify Image" />
+        </Link>
+        
         <div className="login-register-container">
         <Link to="/login" className="login-register-btn navbar-link" onClick={() => handleButtonClick()}>
           Login
