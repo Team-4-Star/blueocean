@@ -19,6 +19,14 @@ const Navbar = () => {
         <Link to="/commands" className="navbar-btn navbar-link" onClick={() => handleButtonClick()}>
           Commands
         </Link>
+        <div className="login-register-container">
+        <Link to="/login" className="login-register-btn navbar-link" onClick={() => handleButtonClick()}>
+          Login
+        </Link>
+        <Link to="/register" className="login-register-btn navbar-link" onClick={() => handleButtonClick()}>
+          Register
+        </Link>
+        </div>
       </div>
     </>
   );
