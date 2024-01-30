@@ -1,25 +1,36 @@
 import { useContext } from "react";
 import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
 import './flashcards.css';
-import { BsSearch } from "react-icons/bs";
+import './categories.css'
 import IndFlashcard from "./IndFlashcard";
+import { FaNode } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
+import { Link } from 'react-router-dom';
+import { BsSearch } from "react-icons/bs";
 
 const FlashcardCtn = () => {
 
     const {flashcards} = useContext(FlashcardContext)
 
     return (
-        <div className="FlashcardCtn" >
-            {flashcards.map((flashcard) => (
+        <div className="flashcard-ctn" >
+
+            <div className='cards-nav' >
+                <Link to='/react-flashcards'>
+                    <FaReact className="searchbar-links react-link" />
+                </Link>
+
+                <Link to='/node-flashcards'>
+                    <FaNode className='searchbar-links node-link' />
+                </Link>
+            </div>
+
+            <div className="card-ctn" >
+                {flashcards.map((flashcard) => (
                 <IndFlashcard key={flashcard.id} flashcard={flashcard} />
-            ))}
+                ))}
+            </div>
         </div>
   )
 }
-
 export default FlashcardCtn;
-
-{/* <div className="SearchBar" >
-                <input placeholder="Search Flashcards"/>
-                <BsSearch className="BsSearch" />
-            </div> */}

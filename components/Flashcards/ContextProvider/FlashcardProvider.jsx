@@ -5,13 +5,14 @@ const FlashcardContextProvider = ({children}) => {
 
     
 //STATE
-    const [currentCard, setCurrentCard] = useState(1);
+
     const [flashcards, setFlashcards] = useState([]);
     const [flashcardsFetched, setFlashcardsFetched] = useState(false)
     const [showAnswer, setShowAnswer] = useState(false);
+    const [categories, setCategories] = useState([]);
 
 //FUNCTIONS
-  
+    //function to fetch all flashcards
     const getFlashcards = async () => {
         try {
             const res = await fetch('https://blue-ocean-back-end.onrender.com/flashcards');
@@ -21,43 +22,55 @@ const FlashcardContextProvider = ({children}) => {
             const data = await res.json();
             setFlashcards(data);
             setFlashcardsFetched(true)
+            // console.log(flashcards)
+            // console.log(flashcardsFetched)
             console.log(flashcards)
             console.log(flashcardsFetched)
         }   catch (error) {
             console.error('problem fetching cards')
         }
     }
-
-    const nextCardClick = () => {
-        setCurrentCard(currentCard + 1)
-        console.log(currentCard + 1)
-    }
-
-    const prevCardClick = () => {
-        if(currentCard === 1) {
-            console.log('cannot go lower than 1')
-            return;
+    //function to fetch flashcard categories
+    const getCategories = async () => {
+        try {
+            const res = await fetch('https://blue-ocean-back-end.onrender.com/flashcards/categories');
+            if(!res.ok) {
+                throw new Error('error')
+            }
+            const data = await res.json();
+            setCategories(data)
+            console.log(data)
+        } catch {
+            console.error('problem fetching categories')
         }
-        setCurrentCard(currentCard - 1)
-        console.log(currentCard - 1)
     }
 
+    //function to toggle individual state of flashcards to show the answer
+    const toggleShowAnswer = (flashcardId) => {
+        setFlashcards(flashcards.map(card => 
+            card.id === flashcardId ? {...card, showAnswer: !card.showAnswer} : card
+        ));
+    }
+
+    //fetches all cards as soon as component is loaded
     useEffect(() => {
         getFlashcards();
     }, []);
 
     return (
-        <FlashcardContext.Provider value={{
-            nextCardClick,
-            getFlashcards,
-            setFlashcardsFetched,
-            prevCardClick,
-            currentCard,
-            flashcards
-        }} >
-            {children}
+        <FlashcardContext.Provider
+          value={{
+            getCategories,
+            toggleShowAnswer,
+            showAnswer,
+            flashcards,
+            categories,
+          }}
+        >
+          {children}
         </FlashcardContext.Provider>
-    )
+      );
 }
 
 export default FlashcardContextProvider;
+

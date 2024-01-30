@@ -1,0 +1,71 @@
+.navbar-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    background-color: var(--dark-grey);
+    border-bottom: 2px solid var(--highlight);
+}
+
+.navbar-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+    width: min-content;
+    height: fit-content;
+    border-left: 2px solid var(--lightest-grey);
+    border-right: 2px solid var(--lightest-grey);
+    border-bottom: 2px solid var(--lightest-grey);
+    border-radius: 0 0 3rem 3rem;
+    background-color: var(--dark-grey);
+    text-transform: uppercase;
+    transition: transform 0.5s ease;
+    margin-bottom: -2rem;
+}
+
+.navbar-btn:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: var(--lightest-grey);
+    border-color: var;
+}
+
+.navbar-link{
+    text-decoration: none;
+    color: inherit; 
+}
+
+.solidify{
+    scale: 0.7
+}
+
+.solidify-image{
+    height: 90px;
+    width: auto;
+}
+
+.login-register-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: fit-content;
+    gap: 2rem;
+    margin-bottom: -2rem;
+    text-transform: uppercase;
+}
+
+.login-register-btn{
+    padding: 1rem;
+    border: 2px solid var(--lightest-grey);
+    border-radius: 1rem;
+}
+
+.login-register-btn:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: var(--lightest-grey);
+    border-color: var;
+}

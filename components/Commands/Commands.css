@@ -1,3 +1,4 @@
+
 .commands-container {
     display: flex;
     flex-direction: column;
@@ -10,10 +11,12 @@
     padding: 2rem;
     width: 30%;
     min-width: fit-content;
-    height: auto;
+    height: fit-content;
     min-height: fit-content;
     font-family: 'Arial', 'Times New Roman';
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .commands-list{
@@ -80,4 +83,16 @@
 
 .hidden {
     visibility: hidden;
+}
+
+#search-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+#command-search{
+    margin-top: 1rem;
+    width: 70%;
 }
