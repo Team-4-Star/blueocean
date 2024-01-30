@@ -8,14 +8,6 @@ export function LoginContextProvider({ children}){
         login: false,
         user_id: null,
         role: null,
-        user_flashcards : {
-            // flashcard_id : null,
-            // user_id: null
-        },
-        user_commands : {
-            // command_id : null,
-            // user_id: null,
-        }
     })
 
     return (
