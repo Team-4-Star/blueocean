@@ -43,7 +43,8 @@
     gap: 5em;
     justify-content: center;
     align-items: center;
-  
+}
+
 .flashcard-ctn {
     display: flex;
     flex-direction: row;
