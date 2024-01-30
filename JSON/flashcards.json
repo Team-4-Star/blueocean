@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "category_id": 1,
+        "word": "What is a component?",
+        "definition": "A component in React is a reusable and self-contained piece of code that defines a part of a user interface.",
+        "is_learned" : true,
+        "is_favorite" : false
+    },
+    {
+        "id": 2,
+        "category_id": 1,
+        "word": "What is a prop?",
+        "definition": "A prop in React is a special keyword that stands for properties and is used to pass data from a parent component to a child component.",
+        "is_learned" : false,
+        "is_favorite" : false
+    },
+    {
+        "id": 3,
+        "category_id": 2,
+        "word": "What is Node?",
+        "definition": "Node.js is a server-side JavaScript runtime that allows developers to execute JavaScript code on the server, or back-end.",
+        "is_learned" : false,
+        "is_favorite" : false
+    },
+    {
+        "id": 4,
+        "category_id": 2,
+        "word": "What is NPM?",
+        "definition": "NPM (Node Package Manager) is a package manager for JavaScript that facilitates the discovery, installation, and management of third-party packages and dependencies used in Node.js projects.",
+        "is_learned" : false,
+        "is_favorite" : false
+    }
+]
