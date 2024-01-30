@@ -1,0 +1,63 @@
+:root{
+    --discordblue: #7289da;
+    --discordLgray: #424549;
+    --discordMgray: #36393e;
+    --discordDgray: #282b30;
+    --discordblack: #1e2124;
+}
+
+.progress-ctn {
+    height: 740px;
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.progress-ctn > h1 {
+    font-style: italic;
+    margin-bottom: 1em;
+    text-shadow: 3px 1px 3px var(--discordblue);
+}
+
+.progress-bar {
+    height: 78%;
+    width: 30px;
+    background-color: transparent;
+    border: 1px solid var(--discordLgray);
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-bar {
+    background-color: var(--discordblue);
+    border: none;
+    width: 24px;
+    height: 10%;
+    border-radius: 7px;
+    margin-bottom: 2px;
+}
+    
+.progress-bar {
+    height: 78%;
+    width: 30px;
+    background-color: transparent;
+    border: 1px solid var(--discordLgray);
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-bar {
+    background-color: var(--discordblue);
+    border: none;
+    width: 24px;
+    height: 10%;
+    border-radius: 0px 0px 7px 7px;
+    margin-bottom: 2px;
+}

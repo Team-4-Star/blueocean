@@ -14,13 +14,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 8em;
+    gap: 1em;
 }
 
 .category {
     border: 1px solid white;
-    height: 600px;
-    width: 400px;
+    height: 475px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,30 +31,32 @@
     background-color: var(--discordblack);
 }
 .category > h1 {
-    font-size: 80px;
+    font-size: 60px;
     text-shadow: 3px 1px 3px var(--discordblue);
 }
 
 .react-logo {
-    font-size: 200px;
     color: aqua;
 }
 
 .node-logo {
-    font-size: 200px;
     color: green;
 }
 
 .js-logo {
-    font-size: 200px;
     color: gold;
+}
+
+.create-logo {
+    color: var(--discordblue);
 }
 
 .logos{
     transition: font-size .2s ease;
+    font-size: 200px;
 }
 .logos:hover {
-    font-size: 300px;
+    font-size: 250px;
 }
 /* END CategoriesCtn CSS */
 
@@ -68,7 +70,7 @@
 }
 
 .cards-nav {
-    height: 150px;
+    height: 100px;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -77,6 +79,7 @@
     z-index: 999;
     top: 0;
     background-color: #1e2124;
+    margin-top: 50px;
 }
 
 .searchbar-links {
@@ -84,7 +87,7 @@
     transition: font-size .2s ease;
 }
 .searchbar-links:hover {
-    font-size: 120px;
+    font-size: 90px;
 }
 
 .javascript-link {

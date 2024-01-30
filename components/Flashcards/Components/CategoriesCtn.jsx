@@ -1,14 +1,20 @@
 import './categories.css'
 import { FaReact } from "react-icons/fa";
 import { FaNode } from "react-icons/fa";
+import { IoIosCreate } from "react-icons/io";
 import { IoLogoJavascript } from "react-icons/io";
 import { Link } from 'react-router-dom';
+import ProgressBar from './ProgressBar';
 
 const CategoriesCtn = () => {
 
   return (
     <div className="flashcard-categories-ctn" >
-
+      <div className='progress-ctn' >
+        <h1>Progress</h1>
+        <ProgressBar/>
+      </div>
+      
       <div className='category' >
         <h1>ALL</h1>
         <Link to='/flashcards'>
@@ -27,6 +33,13 @@ const CategoriesCtn = () => {
         <h1>NODE</h1>
         <Link to='/node-flashcards'>
           <FaNode className='node-logo logos' />
+        </Link>
+      </div>
+
+      <div className='category' >
+        <h1>CREATE</h1>
+        <Link to='/create-flashcard'>
+          <IoIosCreate className='create-logo logos'/>
         </Link>
       </div>
 

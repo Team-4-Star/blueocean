@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
 import './flashcards.css';
 import './categories.css'
@@ -6,11 +6,14 @@ import IndFlashcard from "./IndFlashcard";
 import { FaNode } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-import { BsSearch } from "react-icons/bs";
 
 const FlashcardCtn = () => {
 
-    const {flashcards} = useContext(FlashcardContext)
+    const {flashcards, getFlashcards} = useContext(FlashcardContext);
+
+    useEffect(() => {
+        getFlashcards();
+    }, []);
 
     return (
         <div className="flashcard-ctn" >
@@ -27,7 +30,7 @@ const FlashcardCtn = () => {
 
             <div className="card-ctn" >
                 {flashcards.map((flashcard) => (
-                <IndFlashcard key={flashcard.id} flashcard={flashcard} />
+                    <IndFlashcard key={flashcard.id} flashcard={flashcard} />
                 ))}
             </div>
         </div>
