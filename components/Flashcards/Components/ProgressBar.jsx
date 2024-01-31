@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react'
 
 const ProgressBar = () => {
 
-  const [innerHeight, setInnerHeight] = useState()
+  const [innerHeight, setInnerHeight] = useState(0)
 
   const {
     progress
