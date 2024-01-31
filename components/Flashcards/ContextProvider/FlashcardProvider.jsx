@@ -9,7 +9,7 @@ const FlashcardContextProvider = ({children}) => {
     const [nodeFlashcards, setNodeFlashcards] = useState([])
     const [flashcardsFetched, setFlashcardsFetched] = useState(false)
     const [showAnswer, setShowAnswer] = useState(false);
-    const [progress, setProgress] = useState(0)
+    const [progress, setProgress] = useState(40)
     const [categories, setCategories] = useState([]);
     const [learned, setLearned] = useState(false)
 
@@ -18,7 +18,7 @@ const FlashcardContextProvider = ({children}) => {
     //function to fetch all flashcards
     const getFlashcards = async () => {
         try {
-            const res = await fetch('https://blue-ocean-back-end.onrender.com/flashcards');
+            const res = await fetch('http://localhost:8000/flashcards');
             if(!res.ok) {
                 throw new Error('error')
             }

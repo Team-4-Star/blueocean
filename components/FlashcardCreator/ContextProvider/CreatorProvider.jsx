@@ -34,7 +34,7 @@ const CreatorProvider = ({children}) => {
           }
       
           const flashcardResult = await response.json();
-          console.log('Flashcard created:', flashcardResult);
+          alert('Flashcard created:', flashcardResult);
         } catch (error) {
           console.error('Problem with fetch', error);
         }
