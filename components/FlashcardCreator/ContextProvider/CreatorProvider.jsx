@@ -8,51 +8,55 @@ const CreatorProvider = ({children}) => {
     const [answer, setAnswer] = useState('')
   
     //function to create flashcard===============
-    const createFlashcard = (word, definition, category_id) => {
-        const flashcardData = {
+    const createFlashcard = async (category_id, word, definition) => {
+        try {
+          // Create the flashcard data object
+          const flashcardData = {
+            category_id: category_id,
             word: word,
-            definition: definition,
-            category_id: category_id
-        }
-        const requestOptions = {
+            definition: definition, 
+          };
+      
+          // Set up the request options
+          const requestOptions = {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+              'Content-Type': 'application/json'
             },
             body: JSON.stringify(flashcardData)
+          };
+      
+          // Make the POST request
+          const response = await fetch('http://localhost:8000/flashcards', requestOptions);
+      
+          if (!response.ok) {
+            throw new Error('Network response not ok');
+          }
+      
+          const flashcardResult = await response.json();
+          alert('Flashcard created:', flashcardResult);
+        } catch (error) {
+          console.error('Problem with fetch', error);
+        }
+      };
+      
+
+        //functions to handle input values for card creation
+        const categoryIDChange = (event) => {
+            setCategoryID(event.target.value);
         };
 
-        fetch('http://localhost:80/flashcards', requestOptions)
-            .then(response => {
-                if(!response.ok) {
-                    throw new Error('NW res !ok')
-                }
-                return response.json()
-            })
-            .then(flashcardData => {
-                console.log(flashcardData);
-            })
-            .catch(error => {
-                console.error('problem with fetch', error)
-            })
-    };
+        const questionChange = (event) => {
+            setQuestion(event.target.value);
+        };
 
-    //functions to handle input values for card creation
-    const categoryIDChange = (event) => {
-        setCategoryID(event.target.value);
-    };
+        const answerChange = (event) => {
+            setAnswer(event.target.value);
+        };
 
-    const questionChange = (event) => {
-        setQuestion(event.target.value);
-    };
-
-    const answerChange = (event) => {
-        setAnswer(event.target.value);
-    };
-
-    const submit = () => {
-        createFlashcard(categoryID, question, answer);
-    };
+        const submit = () => {
+            createFlashcard(categoryID, question, answer);
+        };
 
     return (
         <CreatorContext.Provider value={{

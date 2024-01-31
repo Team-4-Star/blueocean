@@ -9,15 +9,16 @@ const FlashcardContextProvider = ({children}) => {
     const [nodeFlashcards, setNodeFlashcards] = useState([])
     const [flashcardsFetched, setFlashcardsFetched] = useState(false)
     const [showAnswer, setShowAnswer] = useState(false);
+    const [progress, setProgress] = useState(40)
     const [categories, setCategories] = useState([]);
-    const [progress, setProgress] = useState(0)
+    const [learned, setLearned] = useState(false)
 
 //FUNCTIONS
-
+// 'https://blue-ocean-back-end.onrender.com/flashcards'
     //function to fetch all flashcards
     const getFlashcards = async () => {
         try {
-            const res = await fetch('https://blue-ocean-back-end.onrender.com/flashcards');
+            const res = await fetch('http://localhost:8000/flashcards');
             if(!res.ok) {
                 throw new Error('error')
             }
@@ -33,6 +34,7 @@ const FlashcardContextProvider = ({children}) => {
 
     //function to fetch all flashcards then filter by category
     const getCardsByCategory = async (num, setElem, elem) => {
+        
         try {
             const res = await fetch('https://blue-ocean-back-end.onrender.com/flashcards');
             if(!res.ok) {
@@ -69,13 +71,24 @@ const FlashcardContextProvider = ({children}) => {
     //function to toggle individual state of flashcards to show the answer
     const toggleShowAnswer = (flashcardId, setElem, elem) => {
         setElem(elem.map(card => 
-            card.id === flashcardId ? {...card, showAnswer: !card.showAnswer} : card
+            card.id === flashcardId ? {...card, 
+                showAnswer: !card.showAnswer} : card
         ));
         console.log('working')
-    }
+    };
+    //function to toggle if card is learned
+    // const toggleLearned = (flashcardId, setElem, elem) => {
+    //     setElem(elem.map(card => 
+    //         card.id === flashcardId ? {...card, 
+    //             learned: !card.learned} : card
+    //     ));
+    //     setLearned(!learned)
+    //     learned ? console.log('learned') : console.log('not learned')
+    // };
 
     return (
         <FlashcardContext.Provider value={{
+            progress,
             getCardsByCategory,
             getCategories,
             getFlashcards,
