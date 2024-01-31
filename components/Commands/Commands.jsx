@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PaginateBtn from './PaginateBtn';
 import { FaCopy } from 'react-icons/fa';
 import { LuCopy } from 'react-icons/lu';
 import './Commands.css';
@@ -8,6 +9,7 @@ const Commands = () => {
   const [copiedCommandId, setCopiedCommandId] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [pages, setPages] = useState(1);
 
   const fuzzySearch = (searchTerm, target) => {
     let searchIndex = 0;
@@ -102,6 +104,7 @@ const Commands = () => {
           </div>
         ))}
       </ul>
+      < PaginateBtn />
     </div>
   );
 };
