@@ -10,6 +10,8 @@ const IndNodeCards = ({flashcard}) => {
     nodeFlashcards,
     setNodeFlashcards
   } = useContext(FlashcardContext)
+
+  
     
   return (
     <div className="flashcard" >
