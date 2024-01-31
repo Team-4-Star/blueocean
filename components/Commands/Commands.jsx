@@ -65,8 +65,9 @@ const Commands = () => {
   };
 
   return (
+
     <div className="commands-container">
-      <h1>
+      <h1 className="commands-header">
         Common Commands <FaCopy />
       </h1>
       <div id="search-container">
@@ -87,15 +88,16 @@ const Commands = () => {
               <p>{command.description}</p>
             </ul>
             <div className="command-list-copy">
-              <LuCopy
-                className="copyButton"
-                onClick={() => copyCommand(command.command, command.id)}
-              />
-              <span
+            <span
                 className={`copied-message ${copiedCommandId === command.id ? 'visible' : 'hidden'}`}
               >
                 Copied!
               </span>
+              <LuCopy
+                className="copyButton"
+                onClick={() => copyCommand(command.command, command.id)}
+              />
+             
             </div>
           </div>
         ))}
