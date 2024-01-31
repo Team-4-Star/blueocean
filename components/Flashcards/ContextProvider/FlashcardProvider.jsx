@@ -9,7 +9,7 @@ const FlashcardContextProvider = ({children}) => {
     const [nodeFlashcards, setNodeFlashcards] = useState([])
     const [flashcardsFetched, setFlashcardsFetched] = useState(false)
     const [showAnswer, setShowAnswer] = useState(false);
-    const [progress, setProgress] = useState(40)
+    const [progress, setProgress] = useState(0)
     const [categories, setCategories] = useState([]);
     const [learned, setLearned] = useState(false)
 
@@ -77,17 +77,23 @@ const FlashcardContextProvider = ({children}) => {
         console.log('working')
     };
     //function to toggle if card is learned
-    // const toggleLearned = (flashcardId, setElem, elem) => {
-    //     setElem(elem.map(card => 
-    //         card.id === flashcardId ? {...card, 
-    //             learned: !card.learned} : card
-    //     ));
-    //     setLearned(!learned)
-    //     learned ? console.log('learned') : console.log('not learned')
-    // };
+    const toggleLearned = async (flashcardId, setElem, elem) => {
+
+        const res = await fetch('http://localhost:8000/progress');
+        const data = await res.json();
+        setProgress(data);
+
+        setElem(elem.map(card => 
+            card.id === flashcardId ? {...card, 
+                learned: !card.learned} : card
+        ));
+        setLearned(!learned)
+        learned ? console.log('learned') : console.log('not learned')
+    };
 
     return (
         <FlashcardContext.Provider value={{
+            toggleLearned,
             progress,
             getCardsByCategory,
             getCategories,
