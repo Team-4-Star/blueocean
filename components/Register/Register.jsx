@@ -44,7 +44,7 @@ const Register = () => {
         const response = await fetch('https://blue-ocean-back-end.onrender.com/register', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
                 'X-CSRF-Token': csrfToken,
             },
             body: JSON.stringify({ username, password, role }),
