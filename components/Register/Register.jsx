@@ -7,21 +7,8 @@ const Register = () => {
 
     const navigate = useNavigate();
     const { username, setUsername, password, setPassword, role, setRole, registrationStatus, setRegistrationStatus } = useContext(LoginContext);
-    const [csrfToken, setCsrfToken] = useState('');
 
-    useEffect(() => {
-        const fetchCsrfToken = async () => {
-            const response = await fetch('https://blue-ocean-back-end.onrender.com/csrf-token', {
-                credentials: 'include',
-            });
-            const data = await response.json();
-            setCsrfToken(data.csrf_token);
-        };
-
-        fetchCsrfToken();
-    }, []);
-
-    // temp faked register data
+// temp faked register data
     // // access the history object from React Router
     // const navigate = useNavigate();
 
@@ -45,10 +32,10 @@ const Register = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'CSRF-Token': csrfToken,
+                'X-CSRF-Token': csrfToken,
             },
             body: JSON.stringify({ username, password, role }),
-            credentials: 'include',
+            /* credentials: 'include', */
         });
         
         const data = await response.json();

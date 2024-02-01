@@ -5,13 +5,14 @@
     --dark-grey: #282b30;
     --darkest-grey: #1e2124;
     color: white;
+    font-family: "Fjalla One", Arial, sans-serif;
 }
 
 * {
     padding: 0; 
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Arial'
+    font-family: "Fjalla One", Arial'
 }
 
 .main-page{
