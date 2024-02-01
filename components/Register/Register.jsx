@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Register.css';
 import { LoginContext } from '../../context/LoginContext.jsx'
@@ -7,7 +7,21 @@ const Register = () => {
 
     const navigate = useNavigate();
     const { username, setUsername, password, setPassword, role, setRole, registrationStatus, setRegistrationStatus } = useContext(LoginContext);
-   
+    const [csrfToken, setCsrfToken] = useState('');
+
+    useEffect(() => {
+        const fetchCsrfToken = async () => {
+            const response = await fetch('https://blue-ocean-back-end.onrender.com/csrf-token', {
+                credentials: 'include',
+            });
+            const data = await response.json();
+            setCsrfToken(data.csrf_token);
+        };
+
+        fetchCsrfToken();
+    }, []);
+
+    // temp faked register data
     // // access the history object from React Router
     // const navigate = useNavigate();
 
@@ -27,13 +41,16 @@ const Register = () => {
 
         e.preventDefault();
 
-        const response = await fetch('https://blue-ocean-back-end-production.onrender.com/register', {
+        const response = await fetch('https://blue-ocean-back-end.onrender.com/register', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'CSRF-Token': csrfToken,
             },
-            body: JSON.stringify({ username, password, role })
+            body: JSON.stringify({ username, password, role }),
+            credentials: 'include',
         });
+        
         const data = await response.json();
 
         if (data.status === 'ok') {
