@@ -5,13 +5,17 @@ import { IoIosCreate } from "react-icons/io";
 import { IoLogoJavascript } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import ProgressBar from './ProgressBar';
+import { useContext } from 'react';
+import FlashcardContext from '../ContextProvider/FlashcardContext.mjs';
 
 const CategoriesCtn = () => {
+  const {progress} = useContext(FlashcardContext)
 
   return (
     <div className="flashcard-categories-ctn" >
       <div className='progress-ctn' >
         <h1>Progress</h1>
+        <h2>{progress}%</h2>
         <ProgressBar/>
       </div>
       
