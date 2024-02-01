@@ -12,7 +12,7 @@
     width: 30%;
     min-width: fit-content;
     height: 90%;
-    font-family: 'Arial', 'Times New Roman';
+    font-family: "Fjalla One", 'Arial', 'Times New Roman';
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
     margin-top: 4rem;
     gap: 2em;
@@ -112,5 +112,5 @@
 }
 
 #command-search::placeholder {
-    font-size: .9em; /* Adjust the font size as needed */
+    font-size: .9em;
 }

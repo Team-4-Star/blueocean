@@ -82,15 +82,17 @@
     background-color: var(--mid-grey);
     color: white;
     border-radius: 15px;
-    font-size: 2em;
-    padding: .25em;
+    font-size: 12px;
+    padding: .30em;
     width: 30%;
     margin-top: 20px;
+    font-family: "Fjalla One";
 }
 
 #submit-btn:hover{
     cursor: pointer;
     background-color: var(--lightest-grey);
+    font-family: "Fjalla One"
 }
 
 #status{
