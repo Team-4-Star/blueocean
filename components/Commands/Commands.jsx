@@ -16,7 +16,7 @@ const Commands = () => {
         searchIndex++;
       }
       if (searchIndex === searchTerm.length) {
-        return true; // All characters in searchTerm found in order
+        return true;
       }
     }
     return false;
@@ -62,7 +62,6 @@ const Commands = () => {
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
-    searchCommands();
   };
 
   return (
@@ -78,7 +77,6 @@ const Commands = () => {
           placeholder="search commands"
           onChange={handleInputChange}
         />
-        {/* Remove the button as it's not needed anymore */}
       </div>
 
       <ul className="commands-list">
