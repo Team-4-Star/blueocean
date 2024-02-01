@@ -10,16 +10,15 @@ const Register = () => {
     const [csrfToken, setCsrfToken] = useState('');
 
     useEffect(() => {
-       /* const fetchCsrfToken = async () => {
+       const fetchCsrfToken = async () => {
             const response = await fetch('https://blue-ocean-back-end.onrender.com/csrf-token', {
-                 credentials: 'include',
+                 /* credentials: 'include', */
             });
             const data = await response.json();
             setCsrfToken(data.csrf_token);
         };
 
         fetchCsrfToken();
-        */
     }, []);
 
 // temp faked register data
@@ -46,10 +45,10 @@ const Register = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-                /* 'X-CSRF-Token': csrfToken, */
+                'X-CSRF-Token': csrfToken,
             },
             body: JSON.stringify({ username, password, role }),
-            credentials: 'include',
+            /* credentials: 'include', */
         });
         
         const data = await response.json();
