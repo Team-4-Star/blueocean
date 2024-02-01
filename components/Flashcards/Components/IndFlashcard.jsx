@@ -1,11 +1,13 @@
 import { useContext, useState, useEffect } from "react";
-import { TiPin } from "react-icons/ti";
 import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
 import { FaRegCheckSquare } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
 
 const IndFlashcard = ({flashcard}) => {
 
   const {
+    toggleUnlearned,
+    toggleLearned,
     toggleShowAnswer,
     flashcards,
     setFlashcards
@@ -15,9 +17,9 @@ const IndFlashcard = ({flashcard}) => {
     <div className="flashcard" >
         {!flashcard.showAnswer ? <h1 className="word" >{flashcard.word}</h1> : <p className="definition" >{flashcard.definition}</p>}
         
-            <div className="flashcard-btn-div" >
-                <TiPin className="pin" />   
-                <FaRegCheckSquare className="check-square" />            
+            <div className="flashcard-btn-div" >   
+                <ImCross className="cross" onClick={() => toggleUnlearned(flashcard.id, flashcards)}/>
+                <FaRegCheckSquare className="check-square" onClick={() => toggleLearned(flashcard.id, flashcards)}/>            
                 <button className="answer-btn" onClick={() => toggleShowAnswer(flashcard.id, setFlashcards, flashcards)} >{!flashcard.showAnswer ? 'Answer' : 'Back'}</button>
             </div>
       

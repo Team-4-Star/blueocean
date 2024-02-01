@@ -3,12 +3,13 @@ import FlashcardContext from '../ContextProvider/FlashcardContext.mjs'
 import { useContext, useEffect, useState } from 'react'
 
 const ProgressBar = () => {
+  
+  const { progress, fetchBarHeight } = useContext(FlashcardContext)
+  const [innerHeight, setInnerHeight] = useState(progress)
 
-  const [innerHeight, setInnerHeight] = useState(0)
-
-  const {
-    progress
-  } = useContext(FlashcardContext)
+  useEffect(() => {
+    fetchBarHeight()
+  }, [])
 
   useEffect(() => {
     setInnerHeight(progress);

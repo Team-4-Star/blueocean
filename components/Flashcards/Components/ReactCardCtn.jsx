@@ -9,13 +9,12 @@ import { useEffect } from 'react';
 
 const ReactCardCtn = () => {
 
-  const {reactFlashcards, 
-         setReactFlashcards, 
-         getCardsByCategory 
+  const {reactFlashcards,  
+         getReactCards 
         } = useContext(FlashcardContext);
 
     useEffect(() => {
-      getCardsByCategory(1, setReactFlashcards, reactFlashcards);
+      getReactCards();
    }, []);
 
   return (
