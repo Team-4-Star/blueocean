@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FlashcardContext from "./FlashcardContext.mjs";
 
 const FlashcardContextProvider = ({children}) => {
@@ -9,9 +9,9 @@ const FlashcardContextProvider = ({children}) => {
     const [nodeFlashcards, setNodeFlashcards] = useState([])
     const [flashcardsFetched, setFlashcardsFetched] = useState(false)
     const [showAnswer, setShowAnswer] = useState(false);
-    const [progress, setProgress] = useState(0)
     const [categories, setCategories] = useState([]);
     const [learned, setLearned] = useState(false)
+    const [progress, setProgress] = useState(0)
 
 //FUNCTIONS
 // 'https://blue-ocean-back-end.onrender.com/flashcards'
@@ -33,23 +33,31 @@ const FlashcardContextProvider = ({children}) => {
     }
 
     //function to fetch all flashcards then filter by category
-    const getCardsByCategory = async (num, setElem, elem) => {
-        
+    const getReactCards = async () => {
         try {
-            const res = await fetch('https://blue-ocean-back-end.onrender.com/flashcards');
+            const res = await fetch('http://localhost:8000/flashcards/react');
             if(!res.ok) {
                 throw new Error('error')
             }
-            const data = await res.json();
+            const data = await res.json();;
+            setReactFlashcards(data);
+            console.log(reactFlashcards)
+        } catch {
+            console.error('problem fetching react cards')
+        }
+    }
 
-            const cards = data.filter(flashcard => flashcard.category_id === num)
-
-            setElem(cards);
-            setFlashcardsFetched(true)
-            console.log(elem)
-
-        }   catch (error) {
-            console.error('problem fetching cards')
+    const getNodeCards = async () => {
+        try {
+            const res = await fetch('http://localhost:8000/flashcards/node');
+            if(!res.ok) {
+                throw new Error('error')
+            }
+            const data = await res.json();;
+            setNodeFlashcards(data);
+            console.log(nodeFlashcards)
+        } catch {
+            console.error('problem fetching node cards')
         }
     }
 
@@ -76,26 +84,53 @@ const FlashcardContextProvider = ({children}) => {
         ));
         console.log('working')
     };
-    //function to toggle if card is learned
-    const toggleLearned = async (flashcardId, setElem, elem) => {
 
+    //function to toggle unlearned
+    const toggleUnlearned = async (flashcardId, elem) => {
+        for (let card of elem) {
+            if (card.id === flashcardId) {
+                const res = await fetch(`http://localhost:8000/update-learned-false/${flashcardId}`);
+                const data = await res.json();
+
+                const resSub = await fetch('http://localhost:8000/progress/sub-barheight')
+                const dataSubb = await resSub.json();
+                console.log(flashcardId, data[0].learned, dataSubb[0].barheight)
+            }
+        }
+    };
+
+    //function to toggle card learned
+    const toggleLearned = async (flashcardId, elem) => {
+        for (let card of elem) {
+            if (card.id === flashcardId) {
+                const res = await fetch(`http://localhost:8000/update-learned-true/${flashcardId}`);
+                const data = await res.json();
+
+                const resAdd = await fetch('http://localhost:8000/progress/add-barheight')
+                const dataAdd = await resAdd.json();
+                console.log(flashcardId, data[0].learned, dataAdd[0].barheight)
+            }
+        }
+    };
+    
+
+    const fetchBarHeight = async () => {
         const res = await fetch('http://localhost:8000/progress');
         const data = await res.json();
-        setProgress(data);
-
-        setElem(elem.map(card => 
-            card.id === flashcardId ? {...card, 
-                learned: !card.learned} : card
-        ));
-        setLearned(!learned)
-        learned ? console.log('learned') : console.log('not learned')
-    };
+        setProgress(data[0].barheight)
+        console.log(data)
+    }
 
     return (
         <FlashcardContext.Provider value={{
-            toggleLearned,
+            getNodeCards,
+            getReactCards,
+            fetchBarHeight,
             progress,
-            getCardsByCategory,
+            learned,
+            setLearned,
+            toggleUnlearned,
+            toggleLearned,
             getCategories,
             getFlashcards,
             toggleShowAnswer,
