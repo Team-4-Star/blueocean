@@ -12,7 +12,7 @@ const Register = () => {
     useEffect(() => {
         const fetchCsrfToken = async () => {
             const response = await fetch('https://blue-ocean-back-end.onrender.com/csrf-token', {
-                credentials: 'include',
+                /* credentials: 'include', */
             });
             const data = await response.json();
             setCsrfToken(data.csrf_token);
