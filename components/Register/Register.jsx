@@ -62,9 +62,11 @@ const Register = () => {
                             value={password} onChange = {(e) => setPassword(e.target.value)}/>
                         </div>
                         <div className="input-row">
-                            <label htmlFor="role" className="label">ROLE</label>
-                            <input type="text" className="input-value" id="role" placeholder="role" autoComplete="off"
-                            value={role} onChange = {(e) => setRole(e.target.value)}/>   
+                        <label htmlFor="role" className="label">ROLE</label>
+                                <select className="input-value" id="role" value={role} onChange={(e) => setRole(e.target.value)}>
+                                    <option value="Student">Student</option>
+                                    <option value="Teacher">Teacher</option>
+                                </select>
                         </div>
                         </div>
                         <button type="submit" id="submit-btn">SUBMIT</button>
