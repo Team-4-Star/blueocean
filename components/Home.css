@@ -1,8 +1,43 @@
 .home-page-content {
-    font-size: 1.0rem;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     margin: 0 auto;
-    margin-top: 50px;
-    padding: 5px;
-    width: 75%;
+    margin-top: 100px;
+    padding: 3rem;
+    background-color: var(--dark-grey);
+    border: 2px solid var(--highlight);
+    width: 50%;
+    gap: 4em;
+    border-radius: 30px;
+    box-shadow: 1px 1px 10px black;
+}
+
+.home-page-header {
+    margin-top: .5em;
+    border-radius: 10px;
+    font-size: 4em;
+    text-transform: uppercase;
+    background-color: var(--lightest-grey);
+    padding: .5em;
+    width: 70%;
+    align-self: center;
+}
+
+
+.home-page-section-header{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.home-page-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex-wrap: wrap;
+    width: 100%;
+    font-size: 2em;
+    padding: 0 3em;
+    gap: .5em;
 }
