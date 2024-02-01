@@ -71,6 +71,13 @@
     outline: none;
 }
 
+.input-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #submit-btn{
     background-color: var(--mid-grey);
     color: white;
@@ -78,6 +85,7 @@
     font-size: 2em;
     padding: .25em;
     width: 30%;
+    margin-top: 20px;
 }
 
 #submit-btn:hover{

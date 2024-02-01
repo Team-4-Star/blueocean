@@ -47,9 +47,11 @@ const Commands = () => {
     }
   };
 
+  // added searchTerm to dependency array to fix empty array bug
   useEffect(() => {
     fetchCommands();
-  }, []);
+    searchCommands();
+  }, [searchTerm]);
 
   const copyCommand = (command, id) => {
     navigator.clipboard.writeText(command);
@@ -58,7 +60,6 @@ const Commands = () => {
     console.log('Copied!');
   };
 
-  // Trigger searchCommands as you type
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
     searchCommands();

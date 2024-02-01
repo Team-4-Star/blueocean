@@ -13,7 +13,6 @@ const Login = () => {
 
     const navigate = useNavigate();
 
-
     const handleSubmit = () => {
      // Simulated registration logic
         // After successful registration, show the status message for 2 seconds
@@ -23,7 +22,6 @@ const Login = () => {
             navigate('/');
         }, 2000);
     }
-    
 
   return (
     <div className="login-container">
@@ -49,4 +47,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login;
