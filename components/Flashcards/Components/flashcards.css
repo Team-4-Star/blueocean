@@ -33,17 +33,19 @@
     color: white;
     align-items: center;
     overflow: auto;
+    margin-top: 30px;
 }
 
 .card-ctn {
     display: flex;
     flex-wrap: wrap;
-    height: 700px;
-    width: 100%;
-    gap: 5em;
+    height: 600px;
+    width: 90%;
+    gap: 15px;
     justify-content: center;
     align-items: center;
-  
+}
+
 .flashcard-ctn {
     display: flex;
     flex-direction: row;
@@ -124,7 +126,7 @@
     font-size: 25px;
 }
 .answer-btn:hover {
-    background-color: rgb(60, 138, 60);
+    background-color: var(--discordblue);
 }
 .answer-btn:active {
     background-color: rgb(60, 138, 60);
@@ -159,31 +161,3 @@
     background-color: green;
 }
 /*END of CSS for flashcard-ctn and flashcard and all elements */
-
-.SearchBar {
-    background-color: #424549;
-    height: 40px;
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 3px;
-}
-
-.SearchBar > input {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-weight: bold;
-    width: 250px;
-    font-size: 20px;
-}
-.SearchBar > input::placeholder {
-    color: gray;
-    text-indent: .5em;
-}
-
-.BsSearch {
-    font-size: 20px;
-    margin-top: 10px;
-    margin-right: .5em;
-}

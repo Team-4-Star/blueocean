@@ -3,13 +3,13 @@ import { TiPin } from "react-icons/ti";
 import FlashcardContext from "../ContextProvider/FlashcardContext.mjs";
 import { FaRegCheckSquare } from "react-icons/fa";
 
-const IndFlashcard = ({flashcard}) => {
+const IndReactCards = ({flashcard}) => {
 
-  const {
-    toggleShowAnswer,
-    flashcards,
-    setFlashcards
-  } = useContext(FlashcardContext)
+    const {
+        toggleShowAnswer,
+        setReactFlashcards,
+        reactFlashcards
+    } = useContext(FlashcardContext)
     
   return (
     <div className="flashcard" >
@@ -18,11 +18,11 @@ const IndFlashcard = ({flashcard}) => {
             <div className="flashcard-btn-div" >
                 <TiPin className="pin" />   
                 <FaRegCheckSquare className="check-square" />            
-                <button className="answer-btn" onClick={() => toggleShowAnswer(flashcard.id, setFlashcards, flashcards)} >{!flashcard.showAnswer ? 'Answer' : 'Back'}</button>
+                <button className="answer-btn" onClick={() => toggleShowAnswer(flashcard.id, setReactFlashcards, reactFlashcards)} >{!flashcard.showAnswer ? 'Answer' : 'Back'}</button>
             </div>
       
     </div>
   )
 }
 
-export default IndFlashcard
+export default IndReactCards

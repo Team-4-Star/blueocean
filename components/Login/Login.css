@@ -1,4 +1,4 @@
-.register-container{
+.login-container{
     display: flex;
     flex-direction: column;
     flex-basis: auto;
@@ -15,7 +15,7 @@
     box-shadow: 1px 1px 10px black;
 }
 
-.register-border{
+.login-border{
     display: flex;
     flex-direction: column;
     flex-basis: auto;
@@ -31,10 +31,6 @@
     padding-left: 10rem;
     padding-right: 10rem;
     gap: 2rem;
-}
-
-.header-label{
-    font-size: 3em;
 }
 
 .label{
@@ -71,13 +67,6 @@
     outline: none;
 }
 
-.input-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
 #submit-btn{
     background-color: var(--mid-grey);
     color: white;
@@ -85,7 +74,6 @@
     font-size: 2em;
     padding: .25em;
     width: 30%;
-    margin-top: 20px;
 }
 
 #submit-btn:hover{
