@@ -6,7 +6,7 @@ import { LoginContext } from '../../context/LoginContext.jsx';
 const Register = () => {
     const navigate = useNavigate();
     const { username, setUsername, password, setPassword, role, setRole, registrationStatus, setRegistrationStatus } = useContext(LoginContext);
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
     
@@ -43,7 +43,6 @@ const Register = () => {
         }
     };
     
-
     return (
         <>
             <div className="register-container">
@@ -61,13 +60,13 @@ const Register = () => {
                             <input type="password" className="input-value" id="password" placeholder="password" autoComplete="off"
                             value={password} onChange = {(e) => setPassword(e.target.value)}/>
                         </div>
-                        <div className="input-row">
-                        <label htmlFor="role" className="label">ROLE</label>
+                            <div className="input-row">
+                                <label htmlFor="role" className="label">ROLE</label>
                                 <select className="input-value" id="role" value={role} onChange={(e) => setRole(e.target.value)}>
                                     <option value="Student">Student</option>
                                     <option value="Teacher">Teacher</option>
                                 </select>
-                        </div>
+                            </div>
                         </div>
                         <button type="submit" id="submit-btn">SUBMIT</button>
                         <div id="status" className={registrationStatus.visible ? '' : 'hidden'}>
