@@ -148,16 +148,22 @@
 .check-square {
     font-size: 40px;
     color: #424549;
-    transition: color, background-color .5s ease;
+    transition: color .5s ease;
     cursor: pointer;
     border-radius: 7px;
 }
 .check-square:hover {
     color: white;
-    background-color: green;
 }
-.check-square:active {
+
+
+.cross {
+    color: #424549;
+    cursor: pointer;
+    transition: color .5s ease;
+    font-size: 25px;
+}
+.cross:hover {
     color: white;
-    background-color: green;
 }
 /*END of CSS for flashcard-ctn and flashcard and all elements */

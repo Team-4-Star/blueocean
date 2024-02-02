@@ -9,12 +9,12 @@ import { useEffect } from "react";
 const NodeCardCtn = () => {
 
   const { nodeFlashcards, 
-          getCardsByCategory, 
+          getNodeCards, 
           setNodeFlashcards
         } = useContext(FlashcardContext);
 
     useEffect(() => {
-      getCardsByCategory(2, setNodeFlashcards, nodeFlashcards);
+      getNodeCards();
   }, []);
 
   return (
