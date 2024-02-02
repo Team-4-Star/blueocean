@@ -155,10 +155,7 @@
 .check-square:hover {
     color: white;
 }
-.check-square:active {
-    color: white;
-    background-color: green;
-}
+
 
 .cross {
     color: #424549;

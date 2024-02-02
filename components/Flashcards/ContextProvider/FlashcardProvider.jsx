@@ -12,13 +12,15 @@ const FlashcardContextProvider = ({children}) => {
     const [categories, setCategories] = useState([]);
     const [learned, setLearned] = useState(false)
     const [progress, setProgress] = useState(0)
+    const [check, setCheck] = useState(false);
+    const [cross, setCross] = useState(false);
 
 //FUNCTIONS
 // 'https://blue-ocean-back-end.onrender.com/flashcards'
     //function to fetch all flashcards
     const getFlashcards = async () => {
         try {
-            const res = await fetch('http://localhost:8000/flashcards');
+            const res = await fetch('https://solidfy.onrender.com/flashcards');
             if(!res.ok) {
                 throw new Error('error')
             }
@@ -35,7 +37,7 @@ const FlashcardContextProvider = ({children}) => {
     //function to fetch all flashcards then filter by category
     const getReactCards = async () => {
         try {
-            const res = await fetch('http://localhost:8000/flashcards/react');
+            const res = await fetch('https://solidfy.onrender.com/flashcards/react');
             if(!res.ok) {
                 throw new Error('error')
             }
@@ -49,7 +51,7 @@ const FlashcardContextProvider = ({children}) => {
 
     const getNodeCards = async () => {
         try {
-            const res = await fetch('http://localhost:8000/flashcards/node');
+            const res = await fetch('https://solidfy.onrender.com/flashcards/node');
             if(!res.ok) {
                 throw new Error('error')
             }
@@ -64,7 +66,7 @@ const FlashcardContextProvider = ({children}) => {
     //function to fetch flashcard categories
     const getCategories = async () => {
         try {
-            const res = await fetch('https://blue-ocean-back-end.onrender.com/flashcards/categories');
+            const res = await fetch('https://solidfy.onrender.com/flashcards/categories');
             if(!res.ok) {
                 throw new Error('error')
             }
@@ -89,12 +91,15 @@ const FlashcardContextProvider = ({children}) => {
     const toggleUnlearned = async (flashcardId, elem) => {
         for (let card of elem) {
             if (card.id === flashcardId) {
-                const res = await fetch(`http://localhost:8000/update-learned-false/${flashcardId}`);
+                const res = await fetch(`https://solidfy.onrender.com/update-learned-false/${flashcardId}`);
                 const data = await res.json();
 
-                const resSub = await fetch('http://localhost:8000/progress/sub-barheight')
+                const resSub = await fetch('https://solidfy.onrender.com/progress/sub-barheight')
                 const dataSubb = await resSub.json();
                 console.log(flashcardId, data[0].learned, dataSubb[0].barheight)
+                setCheck(false)
+                setCross(true)
+                console.log(cross)
             }
         }
     };
@@ -103,19 +108,22 @@ const FlashcardContextProvider = ({children}) => {
     const toggleLearned = async (flashcardId, elem) => {
         for (let card of elem) {
             if (card.id === flashcardId) {
-                const res = await fetch(`http://localhost:8000/update-learned-true/${flashcardId}`);
+                const res = await fetch(`https://solidfy.onrender.com/update-learned-true/${flashcardId}`);
                 const data = await res.json();
 
-                const resAdd = await fetch('http://localhost:8000/progress/add-barheight')
+                const resAdd = await fetch('https://solidfy.onrender.com/progress/add-barheight')
                 const dataAdd = await resAdd.json();
                 console.log(flashcardId, data[0].learned, dataAdd[0].barheight)
+                setCheck(true)
+                setCross(false)
+                console.log(check)
             }
         }
     };
     
 
     const fetchBarHeight = async () => {
-        const res = await fetch('http://localhost:8000/progress');
+        const res = await fetch('https://solidfy.onrender.com/progress');
         const data = await res.json();
         setProgress(data[0].barheight)
         console.log(data)
@@ -123,6 +131,8 @@ const FlashcardContextProvider = ({children}) => {
 
     return (
         <FlashcardContext.Provider value={{
+            check,
+            cross,
             getNodeCards,
             getReactCards,
             fetchBarHeight,
