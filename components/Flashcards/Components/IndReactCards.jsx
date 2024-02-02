@@ -23,7 +23,7 @@ const IndReactCards = ({flashcard}) => {
             <div className="flashcard-btn-div" >   
                 <ImCross className="cross" onClick={() => toggleUnlearned(flashcard.id, reactFlashcards)}/>
                 <FaRegCheckSquare className="check-square" onClick={() => toggleLearned(flashcard.id, reactFlashcards)}/>  
-                <FaEdit className="edit" />           
+                {/* <FaEdit className="edit" />            */}
                 <button className="answer-btn" onClick={() => toggleShowAnswer(flashcard.id, setReactFlashcards, reactFlashcards)} >{!flashcard.showAnswer ? 'Answer' : 'Back'}</button>
             </div>
       
