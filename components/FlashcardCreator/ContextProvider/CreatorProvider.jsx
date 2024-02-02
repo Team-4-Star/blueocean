@@ -27,7 +27,7 @@ const CreatorProvider = ({children}) => {
           };
       
           // Make the POST request
-          const response = await fetch('http://localhost:8000/flashcards', requestOptions);
+          const response = await fetch('https://solidfy.onrender.com/flashcards', requestOptions);
       
           if (!response.ok) {
             throw new Error('Network response not ok');

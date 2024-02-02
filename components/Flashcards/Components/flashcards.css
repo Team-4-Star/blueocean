@@ -51,7 +51,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     height: 940px;
-    width: auto;
+    width: 100%;
     border: none;
     background-color: rgba(30, 33, 36, .7);
     color: white;
@@ -63,10 +63,9 @@
 }
 
 .flashcard {
-    min-height: 200px;
-    max-height: min-content;
-    min-width: 300px;
-    max-width: 450px;
+    min-height: 300px;
+    max-height: 400px;
+    width: 400px;
     background-color: var(--discordDgray);
     display: flex;
     flex-direction: column;
@@ -76,6 +75,7 @@
     border-radius: 15px;
     justify-content: space-around;
     box-shadow: 1px 1px 10px black;
+    margin: 10px;
 }
 
 .definition {
@@ -85,6 +85,7 @@
 }
 .word {
     font-size: 25px;
+    margin: 10px;
     text-shadow: 3px 1px 3px var(--discordblue);
     text-shadow: 1px 1px 3px var(--discordblue);
 }
@@ -164,6 +165,27 @@
     font-size: 25px;
 }
 .cross:hover {
+    color: white;
+}
+
+.trash {
+    color:#7289da;
+    font-size: 15px;
+    cursor: pointer;
+    transition: font-size .5s ease;
+}
+.trash:hover {
+    color: crimson;
+    font-size: 30px;
+}
+
+.edit{
+    font-size: 35px;
+    cursor: pointer;
+    color: #7289da;
+    transition: color .5s ease;
+}
+.edit:hover {
     color: white;
 }
 /*END of CSS for flashcard-ctn and flashcard and all elements */
