@@ -12,8 +12,6 @@ const FlashcardContextProvider = ({children}) => {
     const [categories, setCategories] = useState([]);
     const [learned, setLearned] = useState(false)
     const [progress, setProgress] = useState(0)
-    const [check, setCheck] = useState(false);
-    const [cross, setCross] = useState(false);
 
 //FUNCTIONS
 // 'https://blue-ocean-back-end.onrender.com/flashcards'
@@ -97,9 +95,6 @@ const FlashcardContextProvider = ({children}) => {
                 const resSub = await fetch('https://solidfy.onrender.com/progress/sub-barheight')
                 const dataSubb = await resSub.json();
                 console.log(flashcardId, data[0].learned, dataSubb[0].barheight)
-                setCheck(false)
-                setCross(true)
-                console.log(cross)
             }
         }
     };
@@ -114,13 +109,25 @@ const FlashcardContextProvider = ({children}) => {
                 const resAdd = await fetch('https://solidfy.onrender.com/progress/add-barheight')
                 const dataAdd = await resAdd.json();
                 console.log(flashcardId, data[0].learned, dataAdd[0].barheight)
-                setCheck(true)
-                setCross(false)
-                console.log(check)
             }
         }
     };
-    
+    //delete card==================
+    const deleteCard = async (flashcardId) => {
+        try {
+            const res = await fetch(`https://solidfy.onrender.com/flashcards/${flashcardId}`, {
+                method: 'DELETE'
+            });
+            if(!res.ok) {
+                throw new Error('error')
+            }
+            const data = await res.json();
+            console.log(data)
+            alert('Card deleted')
+        } catch {
+            console.error('problem deleting card')
+        }
+    }
 
     const fetchBarHeight = async () => {
         const res = await fetch('https://solidfy.onrender.com/progress');
@@ -131,8 +138,7 @@ const FlashcardContextProvider = ({children}) => {
 
     return (
         <FlashcardContext.Provider value={{
-            check,
-            cross,
+            deleteCard,
             getNodeCards,
             getReactCards,
             fetchBarHeight,
