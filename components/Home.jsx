@@ -6,15 +6,18 @@ function Home() {
 
   return (
       <div className="home-page-content">
-        <h1 className="home-page-header">Welcome</h1>
+        <div className="home-page-header">
+          <h1 className="home-page-header-title">Welcome!</h1>
+        </div>
+        <div>
+        </div>
         <ul className="home-page-text">
-
           <h2 className="home-page-section-header"> Flashcards </h2>
             <li>
             Review React and Node flashcards
             </li>
             <li>
-            Create new flashcards
+            Edit, Delete, and Create New flashcards
             </li>
           <h2 className="home-page-section-header"> Commands  </h2>
             <li>
