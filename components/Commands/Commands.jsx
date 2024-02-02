@@ -16,7 +16,7 @@ const Commands = () => {
         searchIndex++;
       }
       if (searchIndex === searchTerm.length) {
-        return true; // All characters in searchTerm found in order
+        return true;
       }
     }
     return false;
@@ -35,7 +35,7 @@ const Commands = () => {
 
   const fetchCommands = async () => {
     try {
-      const response = await fetch('https://blue-ocean-back-end.onrender.com/commands');
+      const response = await fetch('https://solidfy.onrender.com/commands');
       if (!response.ok) {
         throw new Error(`something went wrong! ${response.status}`);
       }
