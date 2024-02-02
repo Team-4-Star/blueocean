@@ -8,7 +8,7 @@
 
 The Login and Registration functionality is designed with a security-first mindset. Passwords are salted and hashed using bcrypt:
 
-![ScreenShot](/images/users_table.png)
+![ScreenShot](/images/users.png)
 
 All functionality is contained in our Login and Register components. We wrap our main.jsx with our Login Context Provider, which allows us to use our state in the rest of the application without rerendering. Messages render dynamically based on the type of error encountered (Registration Failed, Login Failed, Wrong Password, etc.)
 
