@@ -98,11 +98,10 @@ const FlashcardContextProvider = ({children}) => {
             }
         }
     };
-
     //function to toggle card learned
     const toggleLearned = async (flashcardId, elem) => {
         for (let card of elem) {
-            if (card.id === flashcardId) {
+            if (card.id === flashcardId && !card.learned) {
                 const res = await fetch(`https://solidfy.onrender.com/update-learned-true/${flashcardId}`);
                 const data = await res.json();
 

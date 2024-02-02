@@ -51,7 +51,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     height: 940px;
-    width: auto;
+    width: 100%;
     border: none;
     background-color: rgba(30, 33, 36, .7);
     color: white;
